@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+    transition: background-color 0.3s, color 0.3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --light-bg-color: #fafafa;
+    --light-fg-color: #fafafa;
+    --light-bg-image: none;
+    --light-accent-color: #39f;
+    --light-content-color: #121212;
+    --light-minor-color: #666;
+    --light-icon-color: #39f;
+    --light-border-color: #39f;
+
+    --dark-bg-color: #060606;
+    --dark-fg-color: #212121;
+    --dark-bg-image: url('/public/images/dark-bg.png');
+    --dark-accent-color: #00f;
+    --dark-content-color: #dadada;
+    --dark-minor-color: #999;
+    --dark-icon-color: #dadada;
+    --dark-border-color: none;
+
+    --bg-color: var(--light-bg-color);
+    --bg-image: var(--light-bg-image);
+    --accent-color: var(--light-accent-color);
+    --content-color: var(--light-content-color);
+    --minor-color: var(--light-minor-color);
+    --icon-color: var(--light-icon-color);
+    --border-color: var(--light-border-color);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--dark-bg-color);
+    --fg-color: var(--dark-fg-color);
+    --bg-image: var(--dark-bg-image);
+    --accent-color: var(--dark-accent-color);
+    --content-color: var(--dark-content-color);
+    --minor-color: var(--dark-minor-color);
+    --icon-color: var(--dark-icon-color);
+    --border-color: var(--dark-border-color);
+}
+
+[data-theme="light"] {
+    --bg-color: var(--light-bg-color);
+    --fg-color: var(--light-fg-color);
+    --bg-image: var(--light-bg-image);
+    --accent-color: var(--light-accent-color);
+    --content-color: var(--light-content-color);
+    --minor-color: var(--light-minor-color);
+    --icon-color: var(--light-icon-color);
+    --border-color: var(--light-border-color);
 }

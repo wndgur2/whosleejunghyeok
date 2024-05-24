@@ -1,0 +1,5 @@
+#container {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    min-height: 100vh;
+}
