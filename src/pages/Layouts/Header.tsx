@@ -1,24 +1,24 @@
-import { FunctionComponent } from "react";
-import Marquee from "react-fast-marquee";
+import { FunctionComponent, useContext } from "react";
 import './Header.css';
 import Toggle from "../../components/Toggle";
-import useLocalStorage from "use-local-storage";
 import Search from "../../components/Search";
+import Marqueee from "../../components/Marqueee";
+import { ThemeContext } from "../../contexts/Theme";
 
 interface HeaderProps {
 
 }
 
 const Header: FunctionComponent<HeaderProps> = () => {
-    const [isDark, setIsDark] = useLocalStorage("isDark", false);
+    const { isDark, setIsDark } = useContext(ThemeContext);
 
     return (
         <div id="header">
-            <Marquee>
-                <span className="marquee">WHO'S LEE JUNG HYEOK? </span>
-            </Marquee>
+            <Marqueee />
             <Search />
-            <Toggle isChecked={isDark} handleChange={() => { setIsDark(!isDark) }} />
+            <Toggle isChecked={isDark} handleChange={() => {
+                setIsDark(!isDark)
+            }} />
         </div>
     );
 }

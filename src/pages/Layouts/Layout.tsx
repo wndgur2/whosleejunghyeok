@@ -1,19 +1,23 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import useLocalStorage from "use-local-storage";
 import "./Layout.css";
+import Marqueee from "../../components/Marqueee";
+import { ThemeContext } from "../../contexts/Theme";
 
 interface LayoutProps {
 
 }
 
 const Layout: FunctionComponent<LayoutProps> = () => {
-    const [isDark] = useLocalStorage("isDark", false);
+    const { isDark } = useContext(ThemeContext);
     return (
         <div id="container" data-theme={isDark ? "dark" : "light"}>
             <Header />
-            <Outlet />
+            <div id="body-container">
+                <Outlet />
+            </div>
+            <Marqueee direction="right" />
         </div>
     );
 }
