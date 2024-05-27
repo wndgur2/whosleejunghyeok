@@ -10,7 +10,7 @@ interface SearchProps {
 const Search: FunctionComponent<SearchProps> = () => {
     return (
         <div className="search-box">
-            <FiSearch className="search-icon" size={24} />
+            <FiSearch className="search-icon" size={22} />
             <input />
         </div>
     );

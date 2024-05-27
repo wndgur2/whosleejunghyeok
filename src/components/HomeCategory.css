@@ -1,0 +1,39 @@
+.home-category {
+    width: 50%;
+    height: 40vh;
+    min-width: 18em;
+    padding-right: 10%;
+
+    overflow: visible;
+}
+
+.home-category-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+    border-bottom: 1.5px solid var(--accent-color);
+    margin-bottom: 1.6em;
+
+    cursor: pointer;
+}
+
+h2 {
+    color: var(--accent-color);
+}
+
+.arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.arrow {
+    color: var(--accent-color);
+}

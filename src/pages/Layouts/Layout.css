@@ -3,3 +3,8 @@
     color: var(--accent-color);
     min-height: 100vh;
 }
+
+#body-container {
+    margin: 4vw 10vw;
+    width: 80vw;
+}

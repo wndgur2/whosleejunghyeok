@@ -1,0 +1,20 @@
+.post-link {
+    margin: 1.2em;
+    margin-left: 0.4em;
+
+}
+
+.post-link-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+h3 {
+    color: var(--content-color);
+    margin: 0.2em;
+}
+
+.vertical-bar {
+    color: var(--content-color);
+}

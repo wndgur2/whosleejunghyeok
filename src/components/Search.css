@@ -2,8 +2,9 @@
     position: absolute;
     z-index: 2;
 
-    right: 10em;
-    width: 18em;
+    right: calc(5em + 5vw);
+    width: 18vw;
+    min-width: 6em;
     height: 2.2em;
     padding: 0 0.5em;
 
@@ -16,20 +17,18 @@
     background-color: var(--fg-color);
 }
 
+.search-box:focus-within {
+    min-width: calc(8em + 8vw);
+}
+
 input {
     width: 85%;
 
-    font-size: medium;
+    font-size: calc(medium - 2px);
     color: var(--content-color);
 
     border: none;
     background-color: transparent;
-}
-
-input::placeholder {
-    color: var(--minor-color);
-    font-size: 1em;
-    padding-left: 0.1em;
 }
 
 input:focus {

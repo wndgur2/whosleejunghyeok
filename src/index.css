@@ -13,16 +13,16 @@
     --light-bg-image: none;
     --light-accent-color: #39f;
     --light-content-color: #121212;
-    --light-minor-color: #666;
+    --light-minor-color: #888;
     --light-icon-color: #39f;
     --light-border-color: #39f;
 
-    --dark-bg-color: #060606;
+    --dark-bg-color: #121212;
     --dark-fg-color: #212121;
     --dark-bg-image: url('/public/images/dark-bg.png');
     --dark-accent-color: #00f;
     --dark-content-color: #dadada;
-    --dark-minor-color: #999;
+    --dark-minor-color: #888;
     --dark-icon-color: #dadada;
     --dark-border-color: none;
 

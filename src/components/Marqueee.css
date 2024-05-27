@@ -1,0 +1,11 @@
+.marquee {
+    white-space: nowrap;
+
+    font-size: 4em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+    text-align: center;
+
+    cursor: default;
+}
