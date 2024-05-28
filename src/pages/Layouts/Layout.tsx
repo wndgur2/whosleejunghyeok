@@ -17,7 +17,7 @@ const Layout: FunctionComponent<LayoutProps> = () => {
             <div id="body-container">
                 <Outlet />
             </div>
-            <Marqueee direction="right" />
+            <Marqueee direction="right" size="2em" />
         </div>
     );
 }

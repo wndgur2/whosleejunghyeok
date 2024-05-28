@@ -4,12 +4,13 @@ import './Marqueee.css';
 
 interface MarqueeeProps {
     direction?: "left" | "right" | "up" | "down";
+    size?: string;
 }
 
-const Marqueee: FunctionComponent<MarqueeeProps> = ({ direction }) => {
+const Marqueee: FunctionComponent<MarqueeeProps> = ({ direction, size }) => {
     return (
         <Marquee autoFill direction={direction}>
-            <span className="marquee">whosleejunghyeok</span>
+            <span className="marquee" style={{ fontSize: size ? size : "4em" }}>whosleejunghyeok</span>
         </Marquee>
     );
 }
