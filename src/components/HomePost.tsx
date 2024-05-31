@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactNode } from "react";
+import Tag from "./Tag";
 
-interface HomeProjectProps {
+interface HomePostProps {
     title: string;
     description: string;
     image: string;
@@ -10,7 +11,7 @@ interface HomeProjectProps {
     date: string;
 }
 
-const HomeProject: FunctionComponent<HomeProjectProps> = (props) => {
+const HomePost: FunctionComponent<HomePostProps> = (props) => {
     return (
         <div className="project">
             <div className="project-image">
@@ -21,7 +22,7 @@ const HomeProject: FunctionComponent<HomeProjectProps> = (props) => {
                 <p>{props.description}</p>
                 <div className="project-tags">
                     {props.tags.map((tag, index) => (
-                        <span key={index}>{tag}</span>
+                        <Tag key={index} tag={tag} />
                     ))}
                 </div>
                 <div className="project-links">
@@ -34,4 +35,4 @@ const HomeProject: FunctionComponent<HomeProjectProps> = (props) => {
     );
 }
 
-export default HomeProject;
+export default HomePost;

@@ -15,7 +15,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ title, children }:
                     <IoIosArrowForward className="arrow" size={28} />
                 </div>
             </div>
-            <div>
+            <div className="posts">
                 {children}
             </div>
         </div>

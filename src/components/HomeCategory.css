@@ -1,9 +1,9 @@
 .home-category {
-    width: 50%;
-    height: 40vh;
+    width: 100%;
+    min-height: 40vh;
     min-width: 18em;
     padding-right: 4%;
-
+    margin: 4em 0px;
     overflow: visible;
 }
 
@@ -36,4 +36,11 @@ h2 {
 
 .arrow {
     color: var(--accent-color);
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
 }

@@ -4,8 +4,8 @@
     display: inline-block;
     cursor: pointer;
 
-    color: var(--content-color);
     border-radius: 0.7em;
+    color: var(--content-color);
     box-shadow: 0 0 0 1px var(--border-color);
     background-color: var(--fg-color);
 }
