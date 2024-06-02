@@ -1,12 +1,13 @@
-export async function loadPostList() {
-    const response = await fetch('/posts/postList.json');
-    const posts = await response.json();
-    console.log("POST LIST: ", posts);
-    return posts;
-}
+export async function loadMetaData() {
+    let response = await fetch('/contents/titles.json');
+    const titles = await response.json();
 
-export async function loadMarkdown(fileName:string) {
-    const response = await fetch(`/posts/metadata/${fileName}.json`);
-    const data = await response.json();
+    const data = [];
+    for (const title of titles.titles) {
+        response = await fetch(`/contents/metadata/${title}.json`);
+        const content = await response.json();
+        data.push(content);
+    }
+    console.log(data);
     return data;
 }

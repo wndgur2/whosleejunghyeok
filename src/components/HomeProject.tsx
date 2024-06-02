@@ -7,9 +7,9 @@ interface HomeProjectProps {
     description: string;
     image: string;
     github: string;
-    link?: string;
     tags: string[];
-    date: string;
+    date_started: string;
+    date_finished?: string;
 }
 
 const HomeProject: FunctionComponent<HomeProjectProps> = (props) => {
@@ -28,9 +28,8 @@ const HomeProject: FunctionComponent<HomeProjectProps> = (props) => {
                 </div>
                 <div className="project-links">
                     <a href={props.github} target="_blank" rel="noreferrer">GitHub</a>
-                    {props.link && <a href={props.link} target="_blank" rel="noreferrer">View</a>}
                 </div>
-                <p className="project-date">{props.date}</p>
+                <p className="project-date">{props.date_started}</p>
             </div>
         </div>
     );
