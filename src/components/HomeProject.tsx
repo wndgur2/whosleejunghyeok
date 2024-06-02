@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from "react";
+import { FunctionComponent } from "react";
 import Tag from "./Tag";
 import './HomeProject.css';
 

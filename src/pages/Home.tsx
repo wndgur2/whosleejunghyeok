@@ -1,12 +1,31 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import './Home.css';
 import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
+import { loadMarkdown, loadPostList } from "../utils/loadPosts";
+
+interface Post {
+    title: string;
+    tags: string[];
+}
 
 const Home: FunctionComponent = () => {
+    const [posts, setPosts] = useState<Post[]>([]);
+    useEffect(() => {
+        async function fetchPosts() {
+            const postList = await loadPostList();
+            const postPromises = postList.titles.map((post: any) => loadMarkdown(post));
+            const postContents = await Promise.all(postPromises);
+            setPosts(postContents);
+        }
+        fetchPosts();
+    }, []);
     return (
         <div id="home">
+            {posts.map((post: Post, index) => (
+                <HomePost key={index} title={post.title} tags={post.tags} />
+            ))}
             <HomeCategory isMain title="Projects">
                 <HomeProject title="Portfolio website" description="My personal website" image="https://via.placeholder.com/150" github="https://github.com" tags={["react", "website"]} date="2021-10-01" />
                 <HomeProject title="Portfolio website" description="My personal website" image="https://via.placeholder.com/150" github="https://github.com" tags={["react", "website"]} date="2021-10-01" />
