@@ -1,10 +1,12 @@
 .home-category {
-    width: 100%;
-    min-height: 40vh;
-    min-width: 18em;
+    width: 33%;
+    min-height: 30vh;
     padding-right: 4%;
     margin: 4em 0px;
-    overflow: visible;
+}
+
+.main {
+    width: 100%;
 }
 
 .home-category-title {
@@ -14,7 +16,6 @@
 
     justify-content: space-between;
 
-    width: 100%;
     border-bottom: 1.5px solid var(--accent-color);
     margin-bottom: 1.6em;
 
@@ -40,7 +41,18 @@ h2 {
 
 .posts {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.posts-wrapper {
+    overflow: scroll;
+
+}
+
+.main .posts {
+    width: fit-content;
+    flex-direction: row;
     justify-content: space-between;
-    gap: 1em;
+    align-items: center;
 }
