@@ -4,10 +4,10 @@ import './HomeProject.css';
 
 interface HomeProjectProps {
     title: string;
-    description: string;
     image: string;
-    github: string;
     tags: string[];
+    description?: string;
+    github?: string;
     date_started: string;
     date_finished?: string;
 }

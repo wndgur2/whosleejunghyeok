@@ -7,6 +7,7 @@ import { ThemeContext } from "./contexts/Theme";
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
+
   return (
     <BrowserRouter>
       <ThemeContext.Provider value={{ isDark, setIsDark }}>

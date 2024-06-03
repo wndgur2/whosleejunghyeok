@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 
-h3 {
+.home-post-title>h3 {
     color: var(--content-color);
     text-wrap: nowrap;
 }

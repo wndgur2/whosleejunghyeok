@@ -1,19 +1,26 @@
 .profile-item {
     display: flex;
     flex-direction: column;
-    gap: 0.4em;
+    gap: 0.2em;
 
     width: 100%;
 
-    padding: 1.2em 2em;
+    padding: 1.1em 2em;
     margin: 0.5em 0px;
 
     border: 1px solid var(--border-color);
+    border-radius: 2em;
     background-color: var(--fg-color);
     transition: color 0.3s, border 0.5s;
+
+    text-wrap: nowrap;
 }
 
 .profile-item:hover {
     border: 0.4em solid var(--border-color);
     cursor: pointer;
+}
+
+a:hover {
+    color: var(--accent-color);
 }
