@@ -11,9 +11,10 @@
 
 h3 {
     color: var(--content-color);
-    margin: 0.2em;
+    text-wrap: nowrap;
 }
 
 .vertical-bar {
     color: var(--content-color);
+    margin-right: 0.4em;
 }

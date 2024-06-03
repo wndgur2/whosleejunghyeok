@@ -1,31 +1,93 @@
 .profile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     margin-top: 20px;
 
+    width: 100%;
+
     color: var(--content-color);
+}
+
+.profile>div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.profile>div>.profile-item {
+    border-radius: 2em;
+}
+
+.left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.left>.profile-item:first-child {
+    border-top-left-radius: 4em;
+}
+
+.left>.profile-item:last-child {
+    border-bottom-left-radius: 4em;
+}
+
+.left>.profile-item:first-child>*:first-child,
+.left>.profile-item:last-child>*:last-child {
+    margin-left: 0.4em;
+}
+
+
+.center {
+    align-items: center;
+    text-align: center;
+
+    width: 30%;
+}
+
+.right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.right>.profile-item:first-child {
+    border-top-right-radius: 4em;
+}
+
+.right>.profile-item:last-child {
+    border-bottom-right-radius: 4em;
+}
+
+.right>.profile-item:first-child>*:first-child,
+.right>.profile-item:last-child>*:last-child {
+    margin-right: 0.4em;
 }
 
 .profile-img-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    height: 20vw;
+    width: 14em;
+    aspect-ratio: 1/1;
 
     padding: 0.5em;
     border-radius: 50%;
     border: 2px solid var(--border-color);
     background-color: var(--fg-color);
+    transition: width 0.5s, border 0.5s;
+}
+
+.profile-img-wrapper:hover {
+    width: 16em;
+    border: 0.5em solid var(--border-color);
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .profile-content {

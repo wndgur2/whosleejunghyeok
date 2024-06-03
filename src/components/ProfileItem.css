@@ -1,0 +1,19 @@
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+
+    width: 100%;
+
+    padding: 1.2em 2em;
+    margin: 0.5em 0px;
+
+    border: 1px solid var(--border-color);
+    background-color: var(--fg-color);
+    transition: color 0.3s, border 0.5s;
+}
+
+.profile-item:hover {
+    border: 0.4em solid var(--border-color);
+    cursor: pointer;
+}
