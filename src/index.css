@@ -4,13 +4,12 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 1s, color 1s;
 }
 
 :root {
     --light-bg-color: #fdfdfd;
     --light-fg-color: #fdfdfd;
-    --light-bg-image: none;
     --light-accent-color: #39f;
     --light-action-color: #f0f;
     --light-content-color: #121212;
@@ -20,7 +19,6 @@
 
     --dark-bg-color: #121212;
     --dark-fg-color: #212121;
-    --dark-bg-image: url('/public/images/dark-bg.png');
     --dark-accent-color: #00f;
     --dark-action-color: #f0f;
     --dark-content-color: #f0f0f0;
@@ -29,7 +27,6 @@
     --dark-border-color: #323232;
 
     --bg-color: var(--light-bg-color);
-    --bg-image: var(--light-bg-image);
     --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
     --content-color: var(--light-content-color);
@@ -41,7 +38,6 @@
 [data-theme="dark"] {
     --bg-color: var(--dark-bg-color);
     --fg-color: var(--dark-fg-color);
-    --bg-image: var(--dark-bg-image);
     --accent-color: var(--dark-accent-color);
     --action-color: var(--dark-action-color);
     --content-color: var(--dark-content-color);
@@ -53,7 +49,6 @@
 [data-theme="light"] {
     --bg-color: var(--light-bg-color);
     --fg-color: var(--light-fg-color);
-    --bg-image: var(--light-bg-image);
     --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
     --content-color: var(--light-content-color);

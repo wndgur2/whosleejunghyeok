@@ -1,55 +1,20 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent } from "react";
 import './Home.css';
 import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
-import { loadPostMetaData } from "../utils/loadPosts";
 import Profile from "../components/Profile/Profile";
-
-interface Post {
-    type: "project" | "career" | "algorithm" | "theory";
-    title: string;
-    tags: string[];
-    date_started: string;
-
-    description?: string;
-    date_finished?: string;
-    github?: string;
-}
-
-interface Posts {
-    project: Post[];
-    career: Post[];
-    algorithm: Post[];
-    theory: Post[];
-}
+import usePosts from "../hooks/fetchPosts";
 
 const Home: FunctionComponent = () => {
-    const [posts, setPosts] = useState<Posts>();
-    useEffect(() => {
-        async function fetchPosts() {
-            const postMeta: Post[] = await loadPostMetaData();
-            const tmp_posts: Posts = {
-                project: [],
-                career: [],
-                algorithm: [],
-                theory: []
-            };
-            for (const post of postMeta) {
-                console.log(post);
-                tmp_posts[post.type].push(post);
-            }
-            setPosts(tmp_posts);
-        }
-        fetchPosts();
-    }, []);
+    const posts = usePosts();
 
     return (
         <div id="home">
             <Profile />
             {posts && <>
                 <HomeCategory isMain title="Projects">
-                    {posts.project.map((post: Post, index) => (
+                    {posts.project.map((post, index) => (
                         <HomeProject key={index} title={post.title} description={post.description} image="https://via.placeholder.com/150" github={post.github} tags={post.tags} date_started={post.date_started} />
                     ))}
                 </HomeCategory>
