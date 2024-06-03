@@ -1,6 +1,6 @@
 #container {
     background-color: var(--bg-color);
-    color: var(--accent-color);
+    color: var(--content-color);
     min-height: 100vh;
 }
 

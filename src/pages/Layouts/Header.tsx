@@ -15,10 +15,12 @@ const Header: FunctionComponent<HeaderProps> = () => {
     return (
         <div id="header">
             <Marqueee />
-            <Search />
-            <Toggle isChecked={isDark} handleChange={() => {
-                setIsDark(!isDark)
-            }} />
+            <div className="headModules">
+                <Search />
+                <Toggle isChecked={isDark} handleChange={() => {
+                    setIsDark(!isDark)
+                }} />
+            </div>
         </div>
     );
 }

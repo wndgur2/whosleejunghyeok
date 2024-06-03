@@ -8,6 +8,5 @@ export async function loadMetaData() {
         const content = await response.json();
         data.push(content);
     }
-    console.log(data);
     return data;
 }

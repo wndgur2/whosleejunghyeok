@@ -12,6 +12,7 @@
     --light-fg-color: #fafafa;
     --light-bg-image: none;
     --light-accent-color: #39f;
+    --light-action-color: #f0f;
     --light-content-color: #121212;
     --light-minor-color: #888;
     --light-icon-color: #39f;
@@ -21,6 +22,7 @@
     --dark-fg-color: #212121;
     --dark-bg-image: url('/public/images/dark-bg.png');
     --dark-accent-color: #00f;
+    --dark-action-color: #f0f;
     --dark-content-color: #dadada;
     --dark-minor-color: #888;
     --dark-icon-color: #dadada;
@@ -29,6 +31,7 @@
     --bg-color: var(--light-bg-color);
     --bg-image: var(--light-bg-image);
     --accent-color: var(--light-accent-color);
+    --action-color: var(--light-action-color);
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
@@ -40,6 +43,7 @@
     --fg-color: var(--dark-fg-color);
     --bg-image: var(--dark-bg-image);
     --accent-color: var(--dark-accent-color);
+    --action-color: var(--dark-action-color);
     --content-color: var(--dark-content-color);
     --minor-color: var(--dark-minor-color);
     --icon-color: var(--dark-icon-color);
@@ -51,8 +55,19 @@
     --fg-color: var(--light-fg-color);
     --bg-image: var(--light-bg-image);
     --accent-color: var(--light-accent-color);
+    --action-color: var(--light-action-color);
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
     --border-color: var(--light-border-color);
+}
+
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--action-color);
 }

@@ -4,6 +4,7 @@ import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
 import { loadMetaData } from "../utils/loadPosts";
+import Profile from "../components/Profile";
 
 interface Project {
     type: string;
@@ -33,6 +34,8 @@ const Home: FunctionComponent = () => {
     }, []);
     return (
         <div id="home">
+            <Profile />
+
             {posts.map((post: Post, index) => (
                 <HomePost key={index} title={post.title} tags={post.tags} />
             ))}
