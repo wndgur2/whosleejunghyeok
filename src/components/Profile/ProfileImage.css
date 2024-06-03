@@ -15,7 +15,7 @@
 .profile-img-wrapper:hover {
     width: 18em;
     cursor: pointer;
-    border: 0.5em solid var(--border-color);
+    border: 0.8em solid var(--border-color);
 }
 
 .hidden {

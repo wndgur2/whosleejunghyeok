@@ -11,7 +11,7 @@ const Home: FunctionComponent = () => {
 
     return (
         <div id="home">
-            <Profile />
+            <Profile posts={posts} />
             {posts && <>
                 <HomeCategory isMain title="Projects">
                     {posts.project.map((post, index) => (

@@ -5,13 +5,15 @@
     font-family: 'Roboto', sans-serif;
 
     transition: background-color 1s, color 1s;
+
+    /* border: 1px solid #f00; */
 }
 
 :root {
-    --light-bg-color: #fdfdfd;
+    --light-bg-color: #f8f8fc;
     --light-fg-color: #fdfdfd;
     --light-accent-color: #39f;
-    --light-action-color: #f0f;
+    --light-action-color: #c0c;
     --light-content-color: #121212;
     --light-minor-color: #888;
     --light-icon-color: #39f;

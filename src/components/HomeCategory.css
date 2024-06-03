@@ -3,7 +3,7 @@
     min-width: 15em;
     min-height: 30vh;
     padding-right: 4%;
-    margin: 4em 0px;
+    margin-bottom: 6em;
 }
 
 .main {
@@ -23,8 +23,9 @@
     cursor: pointer;
 }
 
-h2 {
+.home-category-title>h2 {
     color: var(--accent-color);
+
 }
 
 .arrow-wrapper {
