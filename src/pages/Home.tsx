@@ -4,12 +4,14 @@ import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
 import Profile from "../components/Profile/Profile";
-import usePosts from "../hooks/usePosts";
 import Post from "../types/Post";
 import Posts from "../types/Posts";
 
-const Home: FunctionComponent = () => {
-    const posts: Posts = usePosts();
+interface HomeProps {
+    posts: Posts;
+}
+
+const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 
     return (
         <div id="home">
@@ -25,22 +27,31 @@ const Home: FunctionComponent = () => {
                     ))}
                 </HomeCategory>
                 <HomeCategory title="Career">
-                    <HomePost title="How to write a resume" tags={["resume", "career"]} />
-                    <HomePost title="How to prepare for an interview" tags={["interview", "career"]} />
-                    <HomePost title="How to write a resume" tags={["resume", "career"]} />
-                    <HomePost title="How to prepare for an interview" tags={["interview", "career"]} />
+                    {posts.career.map((post: Post, index) => (
+                        <HomePost
+                            key={index}
+                            title={post.title}
+                            tags={post.tags}
+                        />))
+                    }
                 </HomeCategory>
                 <HomeCategory title="Algorithm solve">
-                    <HomePost title="How to sort an array" tags={["sort", "algorithm"]} />
-                    <HomePost title="How to implement a binary search" tags={["binary search", "algorithm"]} />
-                    <HomePost title="How to sort an array" tags={["sort", "algorithm"]} />
-                    <HomePost title="How to implement a binary search" tags={["binary search", "algorithm"]} />
+                    {posts.algorithm.map((post: Post, index) => (
+                        <HomePost
+                            key={index}
+                            title={post.title}
+                            tags={post.tags}
+                        />))
+                    }
                 </HomeCategory>
                 <HomeCategory title="Theory">
-                    <HomePost title="How to communicate effectively" tags={["communication", "talk"]} />
-                    <HomePost title="How to make a good presentation" tags={["presentation", "talk"]} />
-                    <HomePost title="How to communicate effectively" tags={["communication", "talk"]} />
-                    <HomePost title="How to make a good presentation" tags={["presentation", "talk"]} />
+                    {posts.theory.map((post: Post, index) => (
+                        <HomePost
+                            key={index}
+                            title={post.title}
+                            tags={post.tags}
+                        />))
+                    }
                 </HomeCategory>
             </>
             }

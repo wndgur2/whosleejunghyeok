@@ -5,7 +5,6 @@ import ProfileItem from "./ProfileItem";
 import ProfileImage from "./ProfileImage";
 import getRecentPosts from "../../utils/getRecentPosts";
 import Posts from "../../types/Posts";
-import RecentPost from "../RecentPost";
 import HomePost from "../HomePost";
 
 interface ProfileProps {
@@ -18,6 +17,25 @@ const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
     }, [posts]);
     return (
         <div className="profile">
+            <div className="col">
+                <ProfileImage >
+                    <img className="profile-img" src="/images/profile.jpeg" alt="profile" />
+                </ProfileImage>
+                <div className="profile-content">
+                    <h1 className="profile-name">이중혁</h1>
+                    <h2 className="profile-description">
+                        협력, 성장!
+                    </h2>
+                    <div className="profile-tags">
+                        <Tag tag="HTML" />
+                        <Tag tag="CSS" />
+                        <Tag tag="TypeScript" />
+                        <Tag tag="React" />
+                        <Tag tag="NextJS" />
+                    </div>
+                </div>
+            </div>
+            {/*         
             <div className="col">
                 <h2>recently posted</h2>
                 <div className="recent-posts">
@@ -69,7 +87,7 @@ const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
                 <ProfileItem title="Email" url="https://mail.google.com/mail/?view=cm&to=dkandjsl@gmail.com">
                     <span className="minor">dkandjsl@gmail.com</span>
                 </ProfileItem>
-            </div>
+            </div> */}
         </div>
     );
 }
