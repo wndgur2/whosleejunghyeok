@@ -4,10 +4,12 @@ import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
 import Profile from "../components/Profile/Profile";
-import usePosts, { Post } from "../hooks/fetchPosts";
+import usePosts from "../hooks/usePosts";
+import Post from "../types/Post";
+import Posts from "../types/Posts";
 
 const Home: FunctionComponent = () => {
-    const posts = usePosts();
+    const posts: Posts = usePosts();
 
     return (
         <div id="home">

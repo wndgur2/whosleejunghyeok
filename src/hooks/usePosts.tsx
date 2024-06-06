@@ -1,30 +1,19 @@
 import { useEffect, useState } from "react";
-import { loadPostMetaData } from "../utils/loadPosts";
-
-export interface Post {
-    type: "project" | "career" | "algorithm" | "theory";
-    title: string;
-    tags: string[];
-    date_started: string;
-
-    description?: string;
-    date_finished?: string;
-    github?: string;
-}
-
-interface Posts {
-    project: Post[];
-    career: Post[];
-    algorithm: Post[];
-    theory: Post[];
-}
+import loadPosts from "../utils/loadPosts";
+import Posts from "../types/Posts";
+import Post from "../types/Post";
 
 function usePosts() {
-    const [posts, setPosts] = useState<Posts>();
+    const [posts, setPosts] = useState<Posts>({
+        project: [],
+        career: [],
+        algorithm: [],
+        theory: []
+    });
 
     useEffect(() => {
         async function fetchPost() {
-            const postMeta: Post[] = await loadPostMetaData();
+            const postMeta: Post[] = await loadPosts();
             const tmp_posts: Posts = {
                 project: [],
                 career: [],

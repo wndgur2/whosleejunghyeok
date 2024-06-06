@@ -1,18 +1,31 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import "./Profile.css";
 import Tag from "../Tag";
 import ProfileItem from "./ProfileItem";
 import ProfileImage from "./ProfileImage";
+import getRecentPosts from "../../utils/getRecentPosts";
+import Posts from "../../types/Posts";
+import RecentPost from "../RecentPost";
+import HomePost from "../HomePost";
 
 interface ProfileProps {
-    posts: any;
+    posts: Posts;
 }
 
 const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
+    useEffect(() => {
+        console.log(getRecentPosts(posts));
+    }, [posts]);
     return (
         <div className="profile">
             <div className="col">
                 <h2>recently posted</h2>
+                <div className="recent-posts">
+                    {
+                        getRecentPosts(posts).map((post, index) => (
+                            <HomePost key={index} title={post.title} tags={post.tags} />
+                        ))}
+                </div>
             </div>
             <div className="col">
                 <ProfileImage >

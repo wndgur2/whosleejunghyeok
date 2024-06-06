@@ -1,12 +1,9 @@
-export async function loadPostMetaData() {
-    let response = await fetch('/posts/titles.json');
-    const titles = await response.json();
+import Post from "../types/Post";
 
-    const data = [];
-    for (const title of titles.titles) {
-        response = await fetch(`/posts/metadata/${title}.json`);
-        const content = await response.json();
-        data.push(content);
-    }
+const loadPosts = async ():Promise<Post[]> =>{
+    let response = await fetch('/posts/metadata.json');
+    const posts = await response.json();
+    const data:Post[] = Object.values(posts);
     return data;
 }
+export default loadPosts;

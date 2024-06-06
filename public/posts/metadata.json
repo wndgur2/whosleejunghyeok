@@ -1,0 +1,27 @@
+{
+    "CatChess": {
+        "type": "project",
+        "title": "CatChess",
+        "description": "실시간 3D 웹 대전 게임",
+        "tags": [
+            "ThreeJs",
+            "NodeJs",
+            "Express"
+        ],
+        "date_started": "2023.12.01",
+        "date_finished": "2024.04.17",
+        "github": "https://github.com/wndgur2/CatChess"
+    },
+    "Memohub": {
+        "type": "project",
+        "title": "Memohub",
+        "description": "자유분방한 웹 메모장",
+        "tags": [
+            "NextJs",
+            "mongoDB"
+        ],
+        "date_started": "2023.11.23",
+        "date_finished": "2024.11.29",
+        "github": "https://github.com/wndgur2/memohub"
+    }
+}

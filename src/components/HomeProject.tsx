@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import Tag from "./Tag";
 import './HomeProject.css';
-import { Post } from "../hooks/fetchPosts";
+import Post from "../types/Post";
 
 interface HomeProjectProps {
     post: Post;
