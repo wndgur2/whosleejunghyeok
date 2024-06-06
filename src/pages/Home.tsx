@@ -4,7 +4,7 @@ import HomeCategory from "../components/HomeCategory";
 import HomePost from "../components/HomePost";
 import HomeProject from "../components/HomeProject";
 import Profile from "../components/Profile/Profile";
-import usePosts from "../hooks/fetchPosts";
+import usePosts, { Post } from "../hooks/fetchPosts";
 
 const Home: FunctionComponent = () => {
     const posts = usePosts();
@@ -14,8 +14,12 @@ const Home: FunctionComponent = () => {
             <Profile posts={posts} />
             {posts && <>
                 <HomeCategory isMain title="Projects">
-                    {posts.project.map((post, index) => (
-                        <HomeProject key={index} title={post.title} description={post.description} image="https://via.placeholder.com/150" github={post.github} tags={post.tags} date_started={post.date_started} />
+                    {posts.project.map((post: Post, index) => (
+                        <HomeProject
+                            key={index}
+                            post={post}
+                            image={`images/posts/${post.title}.png`}
+                        />
                     ))}
                 </HomeCategory>
                 <HomeCategory title="Career">

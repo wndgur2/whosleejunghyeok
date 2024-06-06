@@ -45,16 +45,14 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+    justify-content: start;
 }
 
 .posts-wrapper {
     overflow: scroll;
-
 }
 
 .main .posts {
-    width: fit-content;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }

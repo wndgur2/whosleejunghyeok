@@ -9,7 +9,6 @@ interface ProfileProps {
 }
 
 const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
-    console.log(posts);
     return (
         <div className="profile">
             <div className="col">
@@ -22,7 +21,7 @@ const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
                 <div className="profile-content">
                     <h1 className="profile-name">이중혁</h1>
                     <h2 className="profile-description">
-                        함께 성장하는 능동적인 개발자가 되고싶습니다.
+                        협력, 성장!
                     </h2>
                     <div className="profile-tags">
                         <Tag tag="HTML" />

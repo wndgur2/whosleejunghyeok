@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { loadPostMetaData } from "../utils/loadPosts";
 
-interface Post {
+export interface Post {
     type: "project" | "career" | "algorithm" | "theory";
     title: string;
     tags: string[];
@@ -32,7 +32,6 @@ function usePosts() {
                 theory: []
             };
             for (const post of postMeta) {
-                console.log(post);
                 tmp_posts[post.type].push(post);
             }
             setPosts(tmp_posts);

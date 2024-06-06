@@ -1,0 +1,12 @@
+{
+    "type": "project",
+    "title": "Memohub",
+    "description": "자유분방한 웹 메모장",
+    "tags": [
+        "NextJs",
+        "mongoDB"
+    ],
+    "date_started": "2023.11.23",
+    "date_finished": "2024.11.29",
+    "github": "https://github.com/wndgur2/memohub"
+}

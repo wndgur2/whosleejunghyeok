@@ -10,7 +10,6 @@ const ProfileImage: FunctionComponent<ProfileImageProps> = ({ children }) => {
     const profileRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        console.log(clickCount)
         if (clickCount > 10)
             profileRef.current?.classList.add("hidden");
     }, [clickCount]);
