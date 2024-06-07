@@ -10,7 +10,7 @@ interface HomeCategoryProps {
 const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ isMain, title, children }: HomeCategoryProps) => {
     return (
         <div className={isMain ? "home-category main" : "home-category"}>
-            <div className="home-category-title">
+            <div className="home-category-title link">
                 <h2>{title}</h2>
                 <div className="arrow-wrapper">
                     <IoIosArrowForward size={28} />

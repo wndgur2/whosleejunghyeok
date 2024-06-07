@@ -1,20 +1,9 @@
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent } from "react";
 import "./Profile.css";
 import Tag from "../Tag";
-import ProfileItem from "../FooterLink";
 import ProfileImage from "./ProfileImage";
-import getRecentPosts from "../../utils/getRecentPosts";
-import Posts from "../../types/Posts";
-import HomePost from "../HomePost";
 
-interface ProfileProps {
-    posts: Posts;
-}
-
-const Profile: FunctionComponent<ProfileProps> = ({ posts }) => {
-    useEffect(() => {
-        console.log(getRecentPosts(posts));
-    }, [posts]);
+const Profile: FunctionComponent = () => {
     return (
         <div className="profile">
             <ProfileImage >

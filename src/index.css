@@ -84,3 +84,13 @@ p {
 span {
     color: var(--content-color);
 }
+
+.link {
+    color: var(--content-color);
+    cursor: pointer;
+}
+
+.link:hover,
+.link:hover * {
+    color: var(--action-color);
+}

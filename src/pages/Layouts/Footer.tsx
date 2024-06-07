@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import './Footer.css';
 import ProfileItem from "../../components/FooterLink";
-import Marqueee from "../../components/Marqueee";
 
 interface FooterProps {
 

@@ -9,7 +9,7 @@ interface TagProps {
 const Tag: FunctionComponent<TagProps> = ({ tag }) => {
     return (
         <Link
-            to={`/search/${tag}`}
+            to={`/search/%23${tag}`}
             className="tag">{tag}</Link>
     );
 }

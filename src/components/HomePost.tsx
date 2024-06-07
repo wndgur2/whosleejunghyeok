@@ -11,7 +11,7 @@ interface HomePostProps {
 const HomePost: FunctionComponent<HomePostProps> = ({ title, tags }: HomePostProps) => {
     return (
         <div className="home-post">
-            <div className="home-post-title">
+            <div className="home-post-title link">
                 <BsCaretRightFill className="vertical-bar" size={14} />
                 <h3>{title}</h3>
             </div>

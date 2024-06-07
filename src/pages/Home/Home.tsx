@@ -15,7 +15,7 @@ const Home: FunctionComponent<HomeProps> = ({ posts }) => {
 
     return (
         <div id="home">
-            <Profile posts={posts} />
+            <Profile />
             {posts && <>
                 <HomeCategory isMain title="Projects">
                     {posts.project.map((post: Post, index) => (

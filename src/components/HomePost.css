@@ -6,11 +6,6 @@
 .home-post-title {
     display: flex;
     align-items: center;
-    cursor: pointer;
-}
-
-.home-post-title:hover>* {
-    color: var(--action-color);
 }
 
 .home-post-title>h3 {
