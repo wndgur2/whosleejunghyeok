@@ -1,14 +1,14 @@
 import React, { FunctionComponent, useEffect, useRef } from "react";
-import "./ProfileItem.css";
+import "./FooterLink.css";
 import { Link } from "react-router-dom";
 
-interface ProfileItemProps {
+interface FooterLinkProps {
     title: string;
     children: React.ReactNode;
     url: string;
 }
 
-const ProfileItem: FunctionComponent<ProfileItemProps> = ({ title, children, url }) => {
+const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }) => {
 
     const itemRef = useRef<HTMLAnchorElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
@@ -16,7 +16,7 @@ const ProfileItem: FunctionComponent<ProfileItemProps> = ({ title, children, url
     const titleHeightRef = useRef<number>(0);
     const childrenHeightRef = useRef<number>(0);
     const paddingRef = useRef<number>(1.1);
-    const hoveredPaddingRef = useRef<number>(1.6);
+    const hoveredPaddingRef = useRef<number>(1.3);
 
     const mouseEnter = () => {
         if (!itemRef.current || !childrenRef.current || !titleRef.current) return;
@@ -64,4 +64,4 @@ const ProfileItem: FunctionComponent<ProfileItemProps> = ({ title, children, url
     );
 }
 
-export default ProfileItem;
+export default FooterLink;

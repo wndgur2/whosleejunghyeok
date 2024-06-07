@@ -7,4 +7,5 @@
 #body-container {
     margin: 4vw 10vw;
     width: 80vw;
+    min-height: 60vh;
 }

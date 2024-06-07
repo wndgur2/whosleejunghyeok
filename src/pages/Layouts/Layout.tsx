@@ -2,8 +2,8 @@ import { FunctionComponent, useContext } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import "./Layout.css";
-import Marqueee from "../../components/Marqueee";
 import { ThemeContext } from "../../contexts/Theme";
+import Footer from "./Footer";
 
 interface LayoutProps {
 
@@ -17,7 +17,7 @@ const Layout: FunctionComponent<LayoutProps> = () => {
             <div id="body-container">
                 <Outlet />
             </div>
-            <Marqueee direction="right" size="2em" />
+            <Footer />
         </div>
     );
 }
