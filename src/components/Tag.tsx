@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import './Tag.css';
+import { Link } from "react-router-dom";
 
 interface TagProps {
     tag: string;
@@ -7,7 +8,9 @@ interface TagProps {
 
 const Tag: FunctionComponent<TagProps> = ({ tag }) => {
     return (
-        <span className="tag">{tag}</span>
+        <Link
+            to={`/search/${tag}`}
+            className="tag">{tag}</Link>
     );
 }
 

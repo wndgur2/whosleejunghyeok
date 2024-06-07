@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 
-    transition: background-color 1s, color 1s;
+    transition: background-color 1s;
 
     /* border: 1px solid #f00; */
 }

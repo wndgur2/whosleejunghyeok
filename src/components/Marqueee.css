@@ -1,10 +1,12 @@
-.marquee {
+.marqueeBtn {
     white-space: nowrap;
 
     font-weight: bold;
     letter-spacing: 0.1em;
     color: var(--accent-color);
     text-align: center;
+    background: none;
+    border: none;
 
-    cursor: default;
+    cursor: pointer;
 }

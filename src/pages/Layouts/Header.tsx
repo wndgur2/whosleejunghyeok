@@ -1,7 +1,7 @@
 import { FunctionComponent, useContext } from "react";
 import './Header.css';
 import Toggle from "../../components/Toggle";
-import Search from "../../components/Search";
+import SearchBar from "../../components/SearchBar";
 import Marqueee from "../../components/Marqueee";
 import { ThemeContext } from "../../contexts/Theme";
 
@@ -16,7 +16,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
         <div id="header">
             <Marqueee />
             <div className="headModules">
-                <Search />
+                <SearchBar />
                 <Toggle isChecked={isDark} handleChange={() => {
                     setIsDark(!isDark)
                 }} />

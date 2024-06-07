@@ -10,10 +10,11 @@
     border-radius: 0.7em;
     box-shadow: 0 0 0 1px var(--border-color);
     background-color: var(--fg-color);
-    transition: color 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s, padding 0.2s;
 }
 
 .tag:hover {
     color: var(--action-color);
-    box-shadow: 0 0 0 2px var(--border-color);
+    box-shadow: 0 0 0 2px var(--action-color);
+    padding: 0.3em 0.6em;
 }

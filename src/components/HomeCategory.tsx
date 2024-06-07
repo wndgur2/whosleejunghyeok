@@ -13,7 +13,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ isMain, title, chi
             <div className="home-category-title">
                 <h2>{title}</h2>
                 <div className="arrow-wrapper">
-                    <IoIosArrowForward className="arrow" size={28} />
+                    <IoIosArrowForward size={28} />
                 </div>
             </div>
             <div className="posts-wrapper">

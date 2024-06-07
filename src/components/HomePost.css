@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.home-post-title:hover>* {
+    color: var(--action-color);
+}
+
 .home-post-title>h3 {
     color: var(--content-color);
     text-wrap: nowrap;

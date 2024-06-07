@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 import './Home.css';
-import HomeCategory from "../components/HomeCategory";
-import HomePost from "../components/HomePost";
-import HomeProject from "../components/HomeProject";
-import Profile from "../components/Profile/Profile";
-import Post from "../types/Post";
-import Posts from "../types/Posts";
+import HomeCategory from "../../components/HomeCategory";
+import HomePost from "../../components/HomePost";
+import HomeProject from "../../components/HomeProject";
+import Profile from "../../components/Profile/Profile";
+import Post from "../../types/Post";
+import Posts from "../../types/Posts";
 
 interface HomeProps {
     posts: Posts;
