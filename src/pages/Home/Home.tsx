@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import './Home.css';
 import HomeCategory from "../../components/HomeCategory";
 import HomePost from "../../components/HomePost";
@@ -6,13 +6,13 @@ import HomeProject from "../../components/HomeProject";
 import Profile from "../../components/Profile/Profile";
 import Post from "../../types/Post";
 import Posts from "../../types/Posts";
+import { PostsContext } from "../../contexts/Posts";
 
 interface HomeProps {
-    posts: Posts;
 }
 
-const Home: FunctionComponent<HomeProps> = ({ posts }) => {
-
+const Home: FunctionComponent<HomeProps> = () => {
+    const posts = useContext(PostsContext).posts as Posts;
     return (
         <div id="home">
             <Profile />

@@ -7,6 +7,7 @@ import { ThemeContext } from "./contexts/Theme";
 import usePosts from "./hooks/usePosts";
 import Posts from "./types/Posts";
 import SearchResult from "./pages/SearchResult/SearchResult";
+import { PostsContext } from "./contexts/Posts";
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
@@ -14,13 +15,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <ThemeContext.Provider value={{ isDark, setIsDark }}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home posts={posts} />} />
-            <Route path="/search/:string" element={<SearchResult />} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
+        <PostsContext.Provider value={{ posts }}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/search/:search_text" element={<SearchResult />} />
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+        </PostsContext.Provider>
       </ThemeContext.Provider>
     </BrowserRouter>
   );
