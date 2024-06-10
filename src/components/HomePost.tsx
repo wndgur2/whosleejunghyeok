@@ -10,7 +10,7 @@ interface HomePostProps {
 
 const HomePost: FunctionComponent<HomePostProps> = ({ title, tags }: HomePostProps) => {
     return (
-        <div className="home-post">
+        <article className="home-post">
             <div className="home-post-title link">
                 <BsCaretRightFill className="vertical-bar" size={14} />
                 <h3>{title}</h3>
@@ -18,7 +18,7 @@ const HomePost: FunctionComponent<HomePostProps> = ({ title, tags }: HomePostPro
             {tags.map((tag, index) => (
                 <Tag key={index} tag={tag} />
             ))}
-        </div>
+        </article>
     );
 }
 

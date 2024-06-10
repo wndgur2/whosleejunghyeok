@@ -69,9 +69,8 @@ a:hover {
     color: var(--action-color);
 }
 
-.minor {
+small {
     color: var(--minor-color);
-    font-size: 0.8em;
 }
 
 h1,

@@ -9,7 +9,7 @@ interface HomeCategoryProps {
 
 const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ isMain, title, children }: HomeCategoryProps) => {
     return (
-        <div className={isMain ? "home-category main" : "home-category"}>
+        <section className={isMain ? "home-category main" : "home-category"}>
             <div className="home-category-title link">
                 <h2>{title}</h2>
                 <div className="arrow-wrapper">
@@ -21,7 +21,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ isMain, title, chi
                     {children}
                 </div>
             </div>
-        </div >
+        </section >
     );
 }
 

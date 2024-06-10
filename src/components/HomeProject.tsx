@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
+import Post from "../types/Post";
 import Tag from "./Tag";
 import './HomeProject.css';
-import Post from "../types/Post";
 
 interface HomeProjectProps {
     post: Post;
@@ -10,7 +10,7 @@ interface HomeProjectProps {
 
 const HomeProject: FunctionComponent<HomeProjectProps> = ({ post, image }) => {
     return (
-        <div className="project">
+        <article className="project">
             <div className="link">
                 <div className="project-image">
                     <img src={image} alt={post.title} />
@@ -18,7 +18,7 @@ const HomeProject: FunctionComponent<HomeProjectProps> = ({ post, image }) => {
                 <div className="project-info">
                     <h3 className="project-title">{post.title}</h3>
                     <p className="project-discription">{post.description}</p>
-                    <p className="project-date minor">{post.date_started}~ {post.date_finished}</p>
+                    <small className="project-date">{post.date_started}~ {post.date_finished}</small>
                 </div>
             </div>
             <div className="project-tags ">
@@ -26,7 +26,7 @@ const HomeProject: FunctionComponent<HomeProjectProps> = ({ post, image }) => {
                     <Tag key={index} tag={tag} />
                 ))}
             </div>
-        </div>
+        </article>
     );
 }
 
