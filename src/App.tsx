@@ -13,18 +13,19 @@ export default function App() {
     let isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark' ? true : isBrowserDark);
-    const [width, setWidth] = useState(window.innerWidth);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
     const posts: Posts = usePosts();
 
     useEffect(() => {
         window.addEventListener('resize', () => {
-            setWidth(window.innerWidth);
+            if (window.innerWidth < 560) setIsMobile(true);
+            else setIsMobile(false);
         });
     }, []);
 
     return (
         <BrowserRouter>
-            <DeviceContext.Provider value={{ isDark, setIsDark, width }}>
+            <DeviceContext.Provider value={{ isDark, setIsDark, isMobile }}>
                 <PostsContext.Provider value={{ posts }}>
                     <Routes>
                         <Route path="/" element={<Layout />}>
