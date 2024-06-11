@@ -12,13 +12,15 @@ interface ListedPostProps {
 const ListedPost: FunctionComponent<ListedPostProps> = ({ title, tags }: ListedPostProps) => {
     return (
         <article className="listed-post">
-            <Link className="listed-post-title link" to={`/search/${title}`}>
+            <Link className="listed-post-title link" to={`/post/${title}`}>
                 <BsCaretRightFill className="vertical-bar" size={14} />
                 <h3>{title}</h3>
             </Link>
-            {tags.map((tag, index) => (
-                <Tag key={index} tag={tag} />
-            ))}
+            <div className="tags">
+                {tags.map((tag, index) => (
+                    <Tag key={index} tag={tag} />
+                ))}
+            </div>
         </article>
     );
 }
