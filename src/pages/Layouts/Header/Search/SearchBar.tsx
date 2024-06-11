@@ -12,7 +12,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = () => {
     const router = useNavigate();
     const [search, setSearch] = useState<string>('');
     return (
-        <div className="search-bar">
+        <search className="search-bar">
             <FiSearch className="search-icon" size={22} />
             <form
                 onSubmit={
@@ -27,7 +27,7 @@ const SearchBar: FunctionComponent<SearchBarProps> = () => {
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </form>
-        </div>
+        </search>
     );
 }
 
