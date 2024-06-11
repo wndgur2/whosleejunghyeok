@@ -5,9 +5,6 @@ import { DeviceContext } from "../../contexts/Device";
 
 const Footer: FunctionComponent = () => {
     const isMobile = useContext(DeviceContext).isMobile;
-    useEffect(() => {
-        console.log(isMobile)
-    }, [isMobile])
     return (
         <footer>
             {/* TODO: 모든 너비에 대해 모든 링크 넣고, 두 줄 가능하게. maybe wrap FooterLink with absolute height.*/}
