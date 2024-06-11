@@ -1,36 +1,23 @@
-.profile-item {
+.footer-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.1em 2em;
+    padding: 1em 2em;
     margin: 0.5em 0px;
 
     min-width: fit-content;
-    width: 10%;
 
-    border: 2px solid var(--border-color);
-    border-radius: 2em;
     text-wrap: nowrap;
     text-align: center;
 
-    background-color: var(--fg-color);
-
-    overflow: hidden;
-
-    transition: background-color 0.5s, color 0.4s, border 0.4s, width 0.4s, height 0.4s;
+    transition: height 0.4s;
 }
 
-.profile-item:hover {
-    border: 2px solid var(--action-color);
+.footer-link:hover {
     cursor: pointer;
-    width: 20%;
 }
 
-a:hover {
-    color: var(--accent-color);
-}
-
-.profile-item-children {
+.footer-link-children {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
@@ -41,17 +28,21 @@ a:hover {
     transition: opacity 0.3s;
 }
 
-.profile-item-title {
+.footer-link-title {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.3em;
 }
 
-.profile-item-title>h3 {
+.footer-link-title>h3 {
     font-size: 1.1em;
 }
 
 .hovered {
     color: var(--action-color);
+}
+
+.footer-link-children>span {
+    font-size: 0.8em;
 }

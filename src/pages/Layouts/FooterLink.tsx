@@ -15,8 +15,8 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
     const childrenRef = useRef<HTMLDivElement>(null);
     const titleHeightRef = useRef<number>(0);
     const childrenHeightRef = useRef<number>(0);
-    const paddingRef = useRef<number>(1.1);
-    const hoveredPaddingRef = useRef<number>(1.3);
+    const paddingRef = useRef<number>(0.9);
+    const hoveredPaddingRef = useRef<number>(1);
 
     const mouseEnter = () => {
         if (!itemRef.current || !childrenRef.current || !titleRef.current) return;
@@ -37,7 +37,7 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
         if (!titleRef.current || !childrenRef.current || !itemRef.current) return;
         titleHeightRef.current = titleRef.current.getBoundingClientRect().height;
         childrenHeightRef.current = childrenRef.current.getBoundingClientRect().height;
-        itemRef.current.style.height = `calc(2.2em + ${titleHeightRef.current}px)`;
+        itemRef.current.style.height = `calc(${paddingRef.current * 2}em + ${titleHeightRef.current}px)`;
 
 
         const current = itemRef.current;
@@ -53,11 +53,11 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
     }, []);
 
     return (
-        <Link className="profile-item" to={url} rel="noreferrer" target="_blank" ref={itemRef}>
-            <div className="profile-item-title">
-                <h3 ref={titleRef}>{title} </h3>
+        <Link className="footer-link" to={url} rel="noreferrer" target="_blank" ref={itemRef}>
+            <div className="footer-link-title">
+                <h5 ref={titleRef}>{title} </h5>
             </div>
-            <div className="profile-item-children" ref={childrenRef}>
+            <div className="footer-link-children" ref={childrenRef}>
                 {children}
             </div>
         </Link>

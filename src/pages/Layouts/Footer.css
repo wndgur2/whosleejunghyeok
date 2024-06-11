@@ -5,7 +5,6 @@ footer {
     justify-content: space-evenly;
     align-items: center;
 
-    color: var(--minor-color);
     font-size: smaller;
 }
 
@@ -19,6 +18,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 2em;
     align-items: center;
     flex-direction: row;
 
