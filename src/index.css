@@ -96,3 +96,7 @@ small {
 .tag:hover {
     color: var(--action-color);
 }
+
+.minor {
+    color: var(--minor-color);
+}

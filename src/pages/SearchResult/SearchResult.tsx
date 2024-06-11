@@ -29,7 +29,6 @@ const SearchResult: FunctionComponent = () => {
 
     return (
         <div>
-            <h1>Search Result For {params.search_text}</h1>
             <div className="search-result">
                 {result.map((post: Post, index) => (
                     <HomePost title={post.title} tags={post.tags} key={index} />
