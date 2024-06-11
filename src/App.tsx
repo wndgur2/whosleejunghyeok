@@ -5,16 +5,17 @@ import NoPage from './pages/NoPage';
 import { useEffect, useState } from "react";
 import { DeviceContext } from "./contexts/Device";
 import usePosts from "./hooks/usePosts";
-import Posts from "./types/Posts";
 import SearchResult from "./pages/SearchResult/SearchResult";
 import { PostsContext } from "./contexts/Posts";
+import Post from "./pages/Post/Post";
+import _Post from "./types/_Post";
 
 export default function App() {
     let isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark' ? true : isBrowserDark);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
-    const posts: Posts = usePosts();
+    const posts: _Post[] = usePosts();
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -31,6 +32,7 @@ export default function App() {
                         <Route path="/" element={<Layout />}>
                             <Route index element={<Home />} />
                             <Route path="/search/:search_text" element={<SearchResult />} />
+                            <Route path="/post/:post_title" element={<Post />} />
                             <Route path="*" element={<NoPage />} />
                         </Route>
                     </Routes>

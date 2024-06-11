@@ -1,4 +1,4 @@
-export default interface Post {
+export default interface _Post {
     type: "project" | "career" | "algorithm" | "theory";
     title: string;
     content: string;
