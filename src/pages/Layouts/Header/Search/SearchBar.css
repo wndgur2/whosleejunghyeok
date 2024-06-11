@@ -1,9 +1,9 @@
-.search-box {
+.search-bar {
     position: absolute;
     z-index: 2;
 
     right: calc(5em + 5vw);
-    width: 18vw;
+    width: calc(90vw - 7.5em);
     min-width: 6em;
     height: 2.2em;
     padding: 0 0.5em;
@@ -17,15 +17,11 @@
     background-color: var(--fg-color);
 }
 
-.search-box:focus-within {
-    min-width: calc(8em + 8vw);
-}
-
-form {
+.search-bar>form {
     width: 100%;
 }
 
-input {
+.search-bar input {
     width: 100%;
 
     font-size: calc(medium - 2px);

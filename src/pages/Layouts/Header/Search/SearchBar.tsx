@@ -12,13 +12,13 @@ const SearchBar: FunctionComponent<SearchBarProps> = () => {
     const router = useNavigate();
     const [search, setSearch] = useState<string>('');
     return (
-        <div className="search-box">
+        <div className="search-bar">
             <FiSearch className="search-icon" size={22} />
             <form
                 onSubmit={
                     (e) => {
                         e.preventDefault();
-                        router(`/search/${search}`);
+                        if (search) router(`/search/${search}`);
                     }
                 }
             >

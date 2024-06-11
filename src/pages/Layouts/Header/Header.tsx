@@ -1,15 +1,11 @@
 import { FunctionComponent, useContext } from "react";
 import './Header.css';
-import Toggle from "../../components/Toggle";
-import SearchBar from "../../components/Search/SearchBar";
-import Marqueee from "../../components/Marqueee";
-import { DeviceContext } from "../../contexts/Device";
+import Theme from "./Theme/Theme";
+import SearchBar from "./Search/SearchBar";
+import Marqueee from "../../../components/Marqueee";
+import { DeviceContext } from "../../../contexts/Device";
 
-interface HeaderProps {
-
-}
-
-const Header: FunctionComponent<HeaderProps> = () => {
+const Header: FunctionComponent = () => {
     const { isDark, setIsDark } = useContext(DeviceContext);
 
     return (
@@ -17,7 +13,7 @@ const Header: FunctionComponent<HeaderProps> = () => {
             <Marqueee />
             <div className="headModules">
                 <SearchBar />
-                <Toggle isChecked={isDark} handleChange={() => {
+                <Theme isChecked={isDark} handleChange={() => {
                     setIsDark(!isDark)
                     localStorage.setItem('theme', isDark ? 'light' : 'dark');
                 }} />
