@@ -1,6 +1,6 @@
 {
     "CatChess": {
-        "type": "project",
+        "category": "project",
         "title": "CatChess",
         "description": "실시간 3D 웹 대전 게임",
         "tags": [
@@ -13,7 +13,7 @@
         "github": "https://github.com/wndgur2/CatChess"
     },
     "Memohub": {
-        "type": "project",
+        "category": "project",
         "title": "Memohub",
         "description": "자유분방한 웹 메모장",
         "tags": [
@@ -25,7 +25,7 @@
         "github": "https://github.com/wndgur2/memohub"
     },
     "이진트리": {
-        "type": "theory",
+        "category": "theory",
         "title": "이진트리",
         "tags": [
             "Binary Tree",
@@ -34,7 +34,7 @@
         "date_started": "2023.11.23"
     },
     "스택": {
-        "type": "theory",
+        "category": "theory",
         "title": "스택",
         "tags": [
             "Stack",
@@ -43,7 +43,7 @@
         "date_started": "2023.11.23"
     },
     "위상정렬": {
-        "type": "theory",
+        "category": "theory",
         "title": "위상정렬",
         "tags": [
             "Topological Sorting",
@@ -52,7 +52,7 @@
         "date_started": "2023.11.23"
     },
     "1012-유기농배추": {
-        "type": "algorithm",
+        "category": "algorithm",
         "title": "1012-유기농배추",
         "tags": [
             "DFS",
@@ -63,7 +63,7 @@
         "date_started": "2023.11.23"
     },
     "1242-암호코드스캔": {
-        "type": "algorithm",
+        "category": "algorithm",
         "title": "1242-암호코드스캔",
         "tags": [
             "SWExpertAcademy",
@@ -73,7 +73,7 @@
         "date_started": "2023.11.23"
     },
     "1247-최적경로": {
-        "type": "algorithm",
+        "category": "algorithm",
         "title": "1247-최적경로",
         "tags": [
             "SWExpertAcademy",
@@ -83,7 +83,7 @@
         "date_started": "2023.11.23"
     },
     "한경대학교": {
-        "type": "career",
+        "category": "career",
         "title": "한경대학교",
         "description": "컴퓨터공학과",
         "tags": [],

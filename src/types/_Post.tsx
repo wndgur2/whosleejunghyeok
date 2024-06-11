@@ -1,5 +1,5 @@
 export default interface _Post {
-    type: "project" | "career" | "algorithm" | "theory";
+    category: "project" | "career" | "algorithm" | "theory";
     title: string;
     content: string;
     tags: string[];

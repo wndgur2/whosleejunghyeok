@@ -17,9 +17,9 @@ const Home: FunctionComponent = () => {
             {/* posts */}
 
             {posts && <>
-                <HomeCategory isMain title="Projects">
+                <HomeCategory isMain category="Project">
                     {posts.map((post: _Post, index) => (
-                        post.type === "project" &&
+                        post.category === "project" &&
                         <HomeProject
                             key={index}
                             post={post}
@@ -27,9 +27,9 @@ const Home: FunctionComponent = () => {
                         />
                     ))}
                 </HomeCategory>
-                <HomeCategory title="Career">
+                <HomeCategory category="Career">
                     {posts.map((post: _Post, index) => (
-                        post.type === "career" &&
+                        post.category === "career" &&
                         <HomePost
                             key={index}
                             title={post.title}
@@ -37,9 +37,9 @@ const Home: FunctionComponent = () => {
                         />))
                     }
                 </HomeCategory>
-                <HomeCategory title="Algorithm solve">
+                <HomeCategory category="Algorithm">
                     {posts.map((post: _Post, index) => (
-                        post.type === "algorithm" &&
+                        post.category === "algorithm" &&
                         <HomePost
                             key={index}
                             title={post.title}
@@ -47,9 +47,9 @@ const Home: FunctionComponent = () => {
                         />))
                     }
                 </HomeCategory>
-                <HomeCategory title="Theory">
+                <HomeCategory category="Theory">
                     {posts.map((post: _Post, index) => (
-                        post.type === "theory" &&
+                        post.category === "theory" &&
                         <HomePost
                             key={index}
                             title={post.title}
