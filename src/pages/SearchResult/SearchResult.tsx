@@ -4,6 +4,7 @@ import './SearchResult.css';
 import Posts from "../../types/Posts";
 import { PostsContext } from "../../contexts/Posts";
 import Post from "../../types/Post";
+import HomePost from "../../components/HomePost";
 
 const SearchResult: FunctionComponent = () => {
     const params = useParams();
@@ -21,19 +22,17 @@ const SearchResult: FunctionComponent = () => {
             ));
         }, []);
         setResult(result);
-    }, [params]);
+    }, [params, posts]);
 
     useEffect(() => {
     }, [result])
 
     return (
         <div>
-            <h1>Search Result</h1>
+            <h1>Search Result For {params.search_text}</h1>
             <div className="search-result">
                 {result.map((post: Post, index) => (
-                    <div key={index} className="search-result-item">
-                        <h2>{post.title}</h2>
-                    </div>
+                    <HomePost title={post.title} tags={post.tags} key={index} />
                 ))}
 
             </div>
