@@ -4,21 +4,22 @@ import HomeCategory from "./HomeCategory";
 import HomePost from "../../components/ListedPost";
 import HomeProject from "./HomeProject";
 import Profile from "../../components/Profile/Profile";
-import Post from "../../types/Post";
-import Posts from "../../types/Posts";
 import { PostsContext } from "../../contexts/Posts";
+import _Post from "../../types/_Post";
 
 const Home: FunctionComponent = () => {
-    const posts = useContext(PostsContext).posts as Posts;
+    const posts = useContext(PostsContext).posts as _Post[];
     return (
         <div id="home">
+
             <Profile />
 
             {/* posts */}
 
             {posts && <>
                 <HomeCategory isMain title="Projects">
-                    {posts.project.map((post: Post, index) => (
+                    {posts.map((post: _Post, index) => (
+                        post.type === "project" &&
                         <HomeProject
                             key={index}
                             post={post}
@@ -27,7 +28,8 @@ const Home: FunctionComponent = () => {
                     ))}
                 </HomeCategory>
                 <HomeCategory title="Career">
-                    {posts.career.map((post: Post, index) => (
+                    {posts.map((post: _Post, index) => (
+                        post.type === "career" &&
                         <HomePost
                             key={index}
                             title={post.title}
@@ -36,7 +38,8 @@ const Home: FunctionComponent = () => {
                     }
                 </HomeCategory>
                 <HomeCategory title="Algorithm solve">
-                    {posts.algorithm.map((post: Post, index) => (
+                    {posts.map((post: _Post, index) => (
+                        post.type === "algorithm" &&
                         <HomePost
                             key={index}
                             title={post.title}
@@ -45,7 +48,8 @@ const Home: FunctionComponent = () => {
                     }
                 </HomeCategory>
                 <HomeCategory title="Theory">
-                    {posts.theory.map((post: Post, index) => (
+                    {posts.map((post: _Post, index) => (
+                        post.type === "theory" &&
                         <HomePost
                             key={index}
                             title={post.title}

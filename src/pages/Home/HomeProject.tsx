@@ -1,18 +1,18 @@
 import { FunctionComponent } from "react";
-import Post from "../../types/Post";
+import _Post from "../../types/_Post";
 import Tag from "../../components/Tag";
 import './HomeProject.css';
 import { Link } from "react-router-dom";
 
 interface HomeProjectProps {
-    post: Post;
+    post: _Post;
     image: string;
 }
 
 const HomeProject: FunctionComponent<HomeProjectProps> = ({ post, image }) => {
     return (
         <article className="project">
-            <Link className="project-info link" to={`search/${post.title}`}>
+            <Link className="project-info link" to={`/post/${post.title}`}>
                 <div className="project-image">
                     <img src={image} alt={post.title} />
                 </div>
