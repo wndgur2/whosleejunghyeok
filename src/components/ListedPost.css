@@ -1,16 +1,15 @@
-.home-post {
-    margin: 0.2em 0px;
-    padding: 0.3em;
+.listed-post {
+    margin: 0.5em 0px;
     margin-left: 0.2em 0px;
 }
 
-.home-post-title {
+.listed-post-title {
     display: flex;
     align-items: center;
     padding: 0.3em;
 }
 
-.home-post-title>h3 {
+.listed-post-title>h3 {
     color: var(--content-color);
     text-wrap: nowrap;
 }

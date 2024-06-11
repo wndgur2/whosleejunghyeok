@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
-import Post from "../types/Post";
-import Tag from "./Tag";
+import Post from "../../types/Post";
+import Tag from "../../components/Tag";
 import './HomeProject.css';
 import { Link } from "react-router-dom";
 
