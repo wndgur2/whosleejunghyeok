@@ -21,8 +21,12 @@
     min-width: calc(8em + 8vw);
 }
 
+form {
+    width: 100%;
+}
+
 input {
-    width: 85%;
+    width: 100%;
 
     font-size: calc(medium - 2px);
     color: var(--content-color);
