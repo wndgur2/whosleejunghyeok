@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import './HomePost.css';
 import Tag from "./Tag";
 import { BsCaretRightFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 interface HomePostProps {
     title: string;
@@ -11,10 +12,10 @@ interface HomePostProps {
 const HomePost: FunctionComponent<HomePostProps> = ({ title, tags }: HomePostProps) => {
     return (
         <article className="home-post">
-            <div className="home-post-title link">
+            <Link className="home-post-title link" to={`/search/${title}`}>
                 <BsCaretRightFill className="vertical-bar" size={14} />
                 <h3>{title}</h3>
-            </div>
+            </Link>
             {tags.map((tag, index) => (
                 <Tag key={index} tag={tag} />
             ))}

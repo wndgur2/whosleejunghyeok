@@ -1,13 +1,20 @@
 .home-category {
-    width: 33%;
-    min-width: 15em;
+    width: 30%;
+    min-width: 18em;
     min-height: 30vh;
-    padding-right: 4%;
-    margin-bottom: 6em;
+    padding-right: 2em;
+    margin-bottom: 5em;
+}
+
+[device-type="mobile"] .home-category {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 3em;
 }
 
 .main {
     width: 100%;
+    margin-bottom: 1.4em;
 }
 
 .home-category-title {
@@ -18,7 +25,8 @@
     justify-content: space-between;
 
     border-bottom: 1.5px solid var(--accent-color);
-    margin-bottom: 1.6em;
+    margin-bottom: 0.8em;
+    padding: 0.2em 0.3em;
 
     cursor: pointer;
 }
