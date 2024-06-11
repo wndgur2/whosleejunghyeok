@@ -55,7 +55,7 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
     return (
         <Link className="footer-link" to={url} rel="noreferrer" target="_blank" ref={itemRef}>
             <div className="footer-link-title">
-                <h5 ref={titleRef}>{title} </h5>
+                <h4 ref={titleRef}>{title} </h4>
             </div>
             <div className="footer-link-children" ref={childrenRef}>
                 {children}
