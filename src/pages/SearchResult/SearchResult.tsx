@@ -14,9 +14,25 @@ const SearchResult: FunctionComponent = () => {
         if (!params.search_text) return;
 
         const search_text = params.search_text.toLowerCase() as string;
-        const result = posts.filter((post: _Post) =>
-            post.title.toLowerCase().includes(search_text)
-        );
+        console.log(search_text.slice(1))
+        let result;
+        if (search_text.startsWith("#")) {
+            console.log(posts);
+            console.log(search_text.slice(1));
+            result = posts.filter((post: _Post) =>
+                post.tags.map((tag) => tag.toLowerCase()).includes(search_text.slice(1))
+            );
+        }
+        else if (search_text.startsWith("@")) {
+            result = posts.filter((post: _Post) =>
+                post.category.toLowerCase() === search_text.slice(1)
+            );
+        }
+        else {
+            result = posts.filter((post: _Post) =>
+                post.title.toLowerCase().includes(search_text)
+            );
+        }
         setResult(result);
     }, [params, posts]);
 
