@@ -1,21 +1,21 @@
 import { FunctionComponent, useContext } from "react";
 import './Home.css';
-import HomeCategory from "../../components/HomeCategory";
-import HomePost from "../../components/HomePost";
-import HomeProject from "../../components/HomeProject";
+import HomeCategory from "./HomeCategory";
+import HomePost from "../../components/ListedPost";
+import HomeProject from "./HomeProject";
 import Profile from "../../components/Profile/Profile";
 import Post from "../../types/Post";
 import Posts from "../../types/Posts";
 import { PostsContext } from "../../contexts/Posts";
 
-interface HomeProps {
-}
-
-const Home: FunctionComponent<HomeProps> = () => {
+const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as Posts;
     return (
         <div id="home">
             <Profile />
+
+            {/* posts */}
+
             {posts && <>
                 <HomeCategory isMain title="Projects">
                     {posts.project.map((post: Post, index) => (

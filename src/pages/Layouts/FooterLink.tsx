@@ -15,8 +15,8 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
     const childrenRef = useRef<HTMLDivElement>(null);
     const titleHeightRef = useRef<number>(0);
     const childrenHeightRef = useRef<number>(0);
-    const paddingRef = useRef<number>(0.9);
-    const hoveredPaddingRef = useRef<number>(1);
+    const paddingRef = useRef<number>(2);
+    const hoveredPaddingRef = useRef<number>(2);
 
     const mouseEnter = () => {
         if (!itemRef.current || !childrenRef.current || !titleRef.current) return;

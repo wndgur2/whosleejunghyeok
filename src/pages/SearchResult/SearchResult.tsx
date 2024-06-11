@@ -4,7 +4,7 @@ import './SearchResult.css';
 import Posts from "../../types/Posts";
 import { PostsContext } from "../../contexts/Posts";
 import Post from "../../types/Post";
-import HomePost from "../../components/HomePost";
+import ListedPost from "../../components/ListedPost";
 
 const SearchResult: FunctionComponent = () => {
     const params = useParams();
@@ -30,8 +30,9 @@ const SearchResult: FunctionComponent = () => {
     return (
         <div>
             <div className="search-result">
+                <h2>Search Result for {params.search_text}</h2>
                 {result.map((post: Post, index) => (
-                    <HomePost title={post.title} tags={post.tags} key={index} />
+                    <ListedPost title={post.title} tags={post.tags} key={index} />
                 ))}
 
             </div>

@@ -14,7 +14,6 @@ const loadPosts = async ():Promise<Post[]> =>{
         });
     }
     const data:Post[] = Object.values(posts);
-    console.log(data);
     return data;
 }
 export default loadPosts;
