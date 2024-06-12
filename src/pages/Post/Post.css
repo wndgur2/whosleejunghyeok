@@ -1,0 +1,32 @@
+.post img {
+    display: block;
+    max-width: 60vw;
+    max-height: 60vh;
+    object-fit: contain;
+    object-position: top left;
+
+    margin: 1em 0px;
+}
+
+.post h1,
+.post h2 {
+    line-height: 2.5;
+    margin: 3px 0px;
+    background-color: var(--fg-color);
+}
+
+.post h3 {
+    line-height: 2;
+    margin: 1px 0px;
+    background-color: var(--fg-color);
+}
+
+.post ul {
+    margin: 0.5em 0px 1em 0px;
+    padding-left: 1em;
+}
+
+.post li::marker {
+    content: '- ';
+    white-space: pre-line;
+}

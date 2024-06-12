@@ -4,6 +4,7 @@ import Tag from "../../components/Tag";
 import _Post from "../../types/_Post";
 import { PostsContext } from "../../contexts/Posts";
 import Markdown from "markdown-to-jsx";
+import "./Post.css";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
@@ -18,7 +19,7 @@ const Post: FunctionComponent = () => {
     return (
         <>{
             post ?
-                <div>
+                <div className="post">
                     <h1>{title}</h1>
                     <section className="tags">
                         {
@@ -28,6 +29,7 @@ const Post: FunctionComponent = () => {
                         }
                     </section>
                     <small>{post.date_started} ~  {post.date_finished}</small>
+
                     <Markdown>{post.content}</Markdown>
 
                 </div> :
