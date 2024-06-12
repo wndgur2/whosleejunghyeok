@@ -12,24 +12,28 @@ const SearchResult: FunctionComponent = () => {
 
     useEffect(() => {
         if (!params.search_text) return;
-
         const search_text = params.search_text.toLowerCase() as string;
-        let result;
-        if (search_text.startsWith("#")) {
-            result = posts.filter((post: _Post) =>
-                post.tags.map((tag) => tag.toLowerCase()).includes(search_text.slice(1))
-            );
-        }
-        else if (search_text.startsWith("@")) {
-            result = posts.filter((post: _Post) =>
-                post.category.toLowerCase() === search_text.slice(1)
-            );
-        }
-        else {
-            result = posts.filter((post: _Post) =>
-                post.title.toLowerCase().includes(search_text)
-            );
-        }
+        const search_words = search_text.split(" ") as string[];
+
+        let result = [] as _Post[];
+
+        search_words.forEach((word) => {
+            if (word.startsWith("#")) {
+                result = posts.filter((post: _Post) =>
+                    post.tags.map((tag) => tag.toLowerCase()).includes(word.slice(1))
+                );
+            }
+            else if (word.startsWith("@")) {
+                result = posts.filter((post: _Post) =>
+                    post.category.toLowerCase() === word.slice(1)
+                );
+            }
+            else {
+                result = posts.filter((post: _Post) =>
+                    post.title.toLowerCase().includes(word)
+                );
+            }
+        });
         setResult(result);
     }, [params, posts]);
 

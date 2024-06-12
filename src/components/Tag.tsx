@@ -10,7 +10,11 @@ const Tag: FunctionComponent<TagProps> = ({ tag }) => {
     return (
         <Link
             to={`/search/%23${tag}`}
-            className="tag">{tag}</Link>
+            className="tag"
+            state={{ search_text: `#${tag}` }}
+        >
+            {tag}
+        </Link>
     );
 }
 
