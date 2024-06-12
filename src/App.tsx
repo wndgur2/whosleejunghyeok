@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/Layouts/Layout';
 import Home from './pages/Home/Home';
 import NoPage from './pages/NoPage';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DeviceContext } from "./contexts/Device";
 import usePosts from "./hooks/usePosts";
 import SearchResult from "./pages/SearchResult/SearchResult";
@@ -14,19 +14,11 @@ export default function App() {
     let isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark' ? true : isBrowserDark);
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
     const posts: _Post[] = usePosts();
-
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            if (window.innerWidth < 560) setIsMobile(true);
-            else setIsMobile(false);
-        });
-    }, []);
 
     return (
         <BrowserRouter>
-            <DeviceContext.Provider value={{ isDark, setIsDark, isMobile }}>
+            <DeviceContext.Provider value={{ isDark, setIsDark }}>
                 <PostsContext.Provider value={{ posts }}>
                     <Routes>
                         <Route path="/" element={<Layout />}>

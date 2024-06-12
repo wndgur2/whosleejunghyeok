@@ -10,9 +10,9 @@ interface LayoutProps {
 }
 
 const Layout: FunctionComponent<LayoutProps> = () => {
-    const { isDark, isMobile } = useContext(DeviceContext);
+    const { isDark } = useContext(DeviceContext);
     return (
-        <div id="container" data-theme={isDark ? "dark" : "light"} device-type={isMobile ? "mobile" : "desktop"}>
+        <div id="container" data-theme={isDark ? "dark" : "light"}>
             <Header />
             <div id="body-container">
                 <Outlet />
