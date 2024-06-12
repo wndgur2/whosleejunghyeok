@@ -48,9 +48,9 @@
 
 .posts {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .posts-wrapper {

@@ -2,19 +2,36 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+    min-width: 13em;
     width: 13em;
 }
 
+@media screen and (max-width: 768px) {
+    .project {
+        flex-grow: 1;
+    }
+}
+
 .project-image {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.project-image img {
+.project-image>img {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
+    object-position: top;
+}
+
+.project-image>div {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-info {
@@ -30,5 +47,5 @@
 }
 
 .project-tags {
-    margin: 0.5em;
+    margin: 0em 0.5em 1em 0.5em;
 }
