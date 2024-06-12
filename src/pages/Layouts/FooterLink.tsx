@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useRef } from "react";
+import React, { FunctionComponent, useCallback, useEffect, useRef } from "react";
 import "./FooterLink.css";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,6 @@ interface FooterLinkProps {
 }
 
 const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }) => {
-
     const itemRef = useRef<HTMLAnchorElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
     const childrenRef = useRef<HTMLDivElement>(null);
@@ -18,19 +17,19 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
     const paddingRef = useRef<number>(2);
     const hoveredPaddingRef = useRef<number>(2);
 
-    const mouseEnter = () => {
+    const mouseEnter = useCallback(() => {
         if (!itemRef.current || !childrenRef.current || !titleRef.current) return;
         itemRef.current.style.height = `calc(${hoveredPaddingRef.current * 2}em + ${titleHeightRef.current}px + ${childrenHeightRef.current}px)`;
         childrenRef.current.style.opacity = "1";
         titleRef.current.classList.add("hovered");
-    }
+    }, []);
 
-    const mouseLeave = () => {
+    const mouseLeave = useCallback(() => {
         if (!itemRef.current || !childrenRef.current || !titleRef.current) return;
         itemRef.current.style.height = `calc(${paddingRef.current * 2}em + ${titleHeightRef.current}px)`;
         childrenRef.current.style.opacity = "0";
         titleRef.current.classList.remove("hovered");
-    }
+    }, []);
 
     useEffect(() => {
         //get heights
