@@ -6,24 +6,23 @@ import HomeProject from "./HomeProject";
 import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
 import _Post from "../../types/_Post";
+import Loading from "../../components/Loading";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
+    // const posts = [] as _Post[];
     return (
         <div id="home">
 
             <Profile />
 
-            {/* posts */}
-
-            {posts && <>
+            {posts.length ? <>
                 <HomeCategory isMain category="Project">
                     {posts.map((post: _Post, index) => (
                         post.category === "project" &&
                         <HomeProject
                             key={index}
                             post={post}
-                            image={`images/posts/${post.title}.png`}
                         />
                     ))}
                 </HomeCategory>
@@ -57,7 +56,8 @@ const Home: FunctionComponent = () => {
                         />))
                     }
                 </HomeCategory>
-            </>
+            </> :
+                <Loading phrase="Fetching data" />
             }
         </div>
     );
