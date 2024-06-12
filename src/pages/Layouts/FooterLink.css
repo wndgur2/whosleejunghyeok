@@ -11,6 +11,7 @@
     text-align: center;
 
     transition: height 0.4s;
+    background-color: var(--bg-color);
 }
 
 .footer-link:hover {
