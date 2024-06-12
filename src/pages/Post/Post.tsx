@@ -15,23 +15,28 @@ const Post: FunctionComponent = () => {
     useEffect(() => {
         if (!posts) return;
         setPost(posts.find(_post => _post.title === title));
-    }, [posts]);
+    }, [posts, title]);
 
     return (
         <div className="post-container">{
             post ?
                 <div className="post">
-                    <h1>{title}</h1>
-                    <section className="tags">
-                        {
-                            post.tags.map((tag: string, index: number) => (
-                                <Tag key={index} tag={tag} />
-                            ))
-                        }
+                    <section className="title">
+                        <h1>{title}</h1>
+                        <div className="metadata">
+                            <div className="tags">
+                                {
+                                    post.tags.map((tag: string, index: number) => (
+                                        <Tag key={index} tag={tag} />
+                                    ))
+                                }
+                            </div>
+                            <small>{post.date_started} ~  {post.date_finished}</small>
+                        </div>
                     </section>
-                    <small>{post.date_started} ~  {post.date_finished}</small>
-
-                    <Markdown>{post.content}</Markdown>
+                    <section className="content">
+                        <Markdown>{post.content}</Markdown>
+                    </section>
 
                 </div> :
                 <Loading phrase="Loading post" />

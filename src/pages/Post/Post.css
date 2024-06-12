@@ -4,6 +4,16 @@
     margin: 5vw;
 }
 
+.post>.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 1em;
+
+    background-color: var(--faded-bg-color);
+}
+
 .post img {
     display: block;
     max-width: 60vw;
@@ -14,17 +24,26 @@
     margin: 1em 0px;
 }
 
+.metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.post>.content {
+    margin: 1em;
+}
+
 .post h1,
 .post h2 {
     line-height: 2.5;
     margin: 3px 0px;
-    background-color: var(--faded-bg-color);
 }
 
 .post h3 {
     line-height: 2;
     margin: 1px 0px;
-    background-color: var(--faded-bg-color);
 }
 
 .post ul {
