@@ -1,3 +1,9 @@
+.post-container {
+    width: 90vw;
+    padding: 2vw;
+    margin: 5vw;
+}
+
 .post img {
     display: block;
     max-width: 60vw;
@@ -12,13 +18,13 @@
 .post h2 {
     line-height: 2.5;
     margin: 3px 0px;
-    background-color: var(--fg-color);
+    background-color: var(--faded-bg-color);
 }
 
 .post h3 {
     line-height: 2;
     margin: 1px 0px;
-    background-color: var(--fg-color);
+    background-color: var(--faded-bg-color);
 }
 
 .post ul {

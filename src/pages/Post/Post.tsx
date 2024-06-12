@@ -5,6 +5,7 @@ import _Post from "../../types/_Post";
 import { PostsContext } from "../../contexts/Posts";
 import Markdown from "markdown-to-jsx";
 import "./Post.css";
+import Loading from "../../components/Loading";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
@@ -17,7 +18,7 @@ const Post: FunctionComponent = () => {
     }, [posts]);
 
     return (
-        <>{
+        <div className="post-container">{
             post ?
                 <div className="post">
                     <h1>{title}</h1>
@@ -33,10 +34,8 @@ const Post: FunctionComponent = () => {
                     <Markdown>{post.content}</Markdown>
 
                 </div> :
-                <div>
-                    Post {title} not found
-                </div>
-        }</>
+                <Loading phrase="Loading post" />
+        }</div>
     );
 }
 

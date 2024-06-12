@@ -18,8 +18,8 @@ const Profile: FunctionComponent = () => {
                     <Tag tag="HTML" />
                     <Tag tag="CSS" />
                     <Tag tag="TypeScript" />
-                    <Tag tag="React" />
-                    <Tag tag="NextJS" />
+                    <Tag tag="ReactJs" />
+                    <Tag tag="NextJs" />
                 </div>
             </div>
         </div>

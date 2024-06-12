@@ -9,7 +9,7 @@
 
 :root {
     --light-bg-color: #f8f8fc;
-    --light-hover-bg-color: #f0f0f0;
+    --light-faded-bg-color: #eaeaea;
     --light-fg-color: #fdfdfd;
     --light-accent-color: #39f;
     --light-action-color: #f0f;
@@ -19,7 +19,7 @@
     --light-border-color: #39f;
 
     --dark-bg-color: #121212;
-    --dark-hover-bg-color: #212121;
+    --dark-faded-bg-color: #1f1f1f;
     --dark-fg-color: #212121;
     --dark-accent-color: #00f;
     --dark-action-color: #f0f;
@@ -29,7 +29,7 @@
     --dark-border-color: #323232;
 
     --bg-color: var(--light-bg-color);
-    --hover-bg-color: var(--light-hover-bg-color);
+    --faded-bg-color: var(--light-faded-bg-color);
     --fg-color: var(--light-fg-color);
     --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
@@ -41,7 +41,7 @@
 
 [data-theme="dark"] {
     --bg-color: var(--dark-bg-color);
-    --hover-bg-color: var(--dark-hover-bg-color);
+    --faded-bg-color: var(--dark-faded-bg-color);
     --fg-color: var(--dark-fg-color);
     --accent-color: var(--dark-accent-color);
     --action-color: var(--dark-action-color);
@@ -53,7 +53,7 @@
 
 [data-theme="light"] {
     --bg-color: var(--light-bg-color);
-    --hover-bg-color: var(--light-hover-bg-color);
+    --faded-bg-color: var(--light-faded-bg-color);
     --fg-color: var(--light-fg-color);
     --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
@@ -82,10 +82,14 @@ small {
     cursor: pointer;
 }
 
-.link:hover,
+.link:hover {
+    color: var(--action-color);
+    background-color: var(--faded-bg-color);
+}
+
 .link:hover * {
     color: var(--action-color);
-    background-color: var(--hover-bg-color);
+    /* background-color: var(--faded-bg-color); */
 }
 
 .link:hover .tag {
