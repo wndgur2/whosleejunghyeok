@@ -1,7 +1,7 @@
 import { FunctionComponent, useContext } from "react";
 import './Header.css';
 import Theme from "./Theme/Theme";
-import SearchBar from "./Search/SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import Marqueee from "../../../components/Marqueee";
 import { DeviceContext } from "../../../contexts/Device";
 
