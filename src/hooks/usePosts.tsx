@@ -7,7 +7,7 @@ function usePosts() {
 
     useEffect(() => {
         async function fetchPost() {
-            setPosts(await loadPosts());
+            loadPosts(setPosts);
         }
         fetchPost();
     }, []);
