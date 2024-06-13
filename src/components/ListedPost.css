@@ -1,12 +1,31 @@
 .listed-post {
     margin: 0.5em 0px;
     margin-left: 0.2em 0px;
+    padding: 0.5em;
+
+    height: fit-content;
+
+    background-color: var(--faded-bg-color);
+    border-radius: 1em;
+
+    transition: padding 0.2s;
+}
+
+.listed-post:hover {
+    padding: 0.6em;
+}
+
+.listed-post:hover>.listed-post-title {
+    padding: 0.5em;
 }
 
 .listed-post-title {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 4em;
     padding: 0.3em;
+    transition: padding 0.2s;
 }
 
 .listed-post-title>h3 {
@@ -14,7 +33,13 @@
     text-wrap: nowrap;
 }
 
-.vertical-bar {
+.triangle {
     color: var(--content-color);
     margin-right: 0.4em;
+}
+
+.listed-post .tags {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 0.3em;
 }
