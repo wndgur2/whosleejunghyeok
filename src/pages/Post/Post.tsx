@@ -1,5 +1,5 @@
 import { FunctionComponent, useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Tag from "../../components/Tag";
 import _Post from "../../types/_Post";
 import { PostsContext } from "../../contexts/Posts";
@@ -21,22 +21,28 @@ const Post: FunctionComponent = () => {
         <div className="post-container">{
             post ?
                 <div className="post">
-                    <section className="title">
-                        <h1>{title}</h1>
-                        <div className="metadata">
-                            <div className="tags">
+                    <header>
+                        <section>
+                            <h1>{title}</h1>
+                            <ol>
                                 {
                                     post.tags.map((tag: string, index: number) => (
                                         <Tag key={index} tag={tag} />
                                     ))
                                 }
-                            </div>
+                            </ol>
+                        </section>
+                        <section>
+                            {
+                                post.github &&
+                                <Link to={post.github} rel="noreferrer" target="_blank">{post.github.split("//")[1]}</Link>
+                            }
                             <small>{post.date_started} ~  {post.date_finished}</small>
-                        </div>
-                    </section>
-                    <section className="content">
+                        </section>
+                    </header>
+                    <main>
                         <Markdown>{post.content}</Markdown>
-                    </section>
+                    </main>
 
                 </div> :
                 <Loading phrase="Loading post" />
