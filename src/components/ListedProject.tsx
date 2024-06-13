@@ -1,22 +1,21 @@
 import { FunctionComponent } from "react";
-import _Post from "../../types/_Post";
-import Tag from "../../components/Tag";
-import './HomeProject.css';
+import _Post from "../types/_Post";
+import Tag from "./Tag";
+import './ListedProject.css';
 import { Link } from "react-router-dom";
 import parse from 'html-react-parser';
 import { CiImageOff } from "react-icons/ci";
 
-interface HomeProjectProps {
+interface ListedProjectProps {
     post: _Post;
 }
 
-const HomeProject: FunctionComponent<HomeProjectProps> = ({ post }) => {
-    const thumbnail = post.content.match(/<img[^>]+src="([^">]+)".*>/);
+const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
     return (
         <article className="project">
             <Link className="project-info link" to={`/post/${post.title}`}>
                 <div className="project-image">
-                    {thumbnail ? parse(thumbnail[0] + "</img>") :
+                    {post.thumbnail ? parse(post.thumbnail) :
                         <div><CiImageOff size={32} /></div>
                     }
                 </div>
@@ -24,13 +23,13 @@ const HomeProject: FunctionComponent<HomeProjectProps> = ({ post }) => {
                 <p className="project-discription">{post.description}</p>
                 <small className="project-date">{post.date_started}~ {post.date_finished}</small>
             </Link>
-            <div className="project-tags ">
+            <ol className="tags">
                 {post.tags.map((tag, index) => (
                     <Tag key={index} tag={tag} />
                 ))}
-            </div>
+            </ol>
         </article>
     );
 }
 
-export default HomeProject;
+export default ListedProject;

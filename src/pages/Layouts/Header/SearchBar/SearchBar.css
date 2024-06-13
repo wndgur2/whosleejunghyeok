@@ -17,6 +17,10 @@
     background-color: var(--fg-color);
 }
 
+.search-bar:focus-within {
+    outline: 2px solid var(--border-color);
+}
+
 .search-bar>form {
     width: 100%;
 }

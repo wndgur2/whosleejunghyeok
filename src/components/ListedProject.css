@@ -7,7 +7,18 @@
     width: 13em;
     min-width: 13em;
     padding: 0.8em;
-    margin-bottom: 1em;
+    margin: 0.8em;
+
+    border-radius: 1em;
+    background-color: var(--faded-bg-color);
+
+
+    transition: flex-grow 0.2s, width 0.2s, margin 0.2s;
+}
+
+.project:hover {
+    width: 14em;
+    margin: 0.8em 0.3em;
 }
 
 @media screen and (max-width: 768px) {
@@ -21,6 +32,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 1em;
+    overflow: hidden;
 }
 
 .project-image>img {
@@ -50,6 +63,13 @@
     cursor: pointer;
 }
 
-.project-tags {
+.project .tags {
     margin-top: 0.3em;
+
+    /* 줄 너무 늘어남 방지 */
+    width: calc(5.5em + 50%);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
 }
