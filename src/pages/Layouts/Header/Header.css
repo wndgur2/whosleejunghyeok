@@ -1,5 +1,5 @@
 #header {
-    height: 5em;
+    height: 7em;
     display: flex;
     align-items: flex-end;
 }
@@ -18,4 +18,23 @@
     .headModules {
         visibility: hidden;
     }
+}
+
+.marquee button {
+    white-space: nowrap;
+
+    font-size: 6em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: var(--accent-color);
+
+    text-align: center;
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.marquee:hover button {
+    color: var(--action-color);
 }
