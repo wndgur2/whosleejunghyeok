@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback, useEffect, useRef, useState } from "react";
 import _Post from "../types/_Post";
 import Tag from "./Tag";
 import './ListedProject.css';
@@ -11,8 +11,24 @@ interface ListedProjectProps {
 }
 
 const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
+    const projectRef = useRef<HTMLDivElement>(null);
+    const [eventOccuredTime, setEventOccuredTime] = useState<Date>(new Date());
+    const handleMouseEvent = useCallback(() => {
+        setEventOccuredTime((current) => {
+            if (new Date().getTime() - current.getTime() < 100) {
+                console.log("fixing width", post.title);
+                projectRef.current?.classList.add('fix-width');
+            }
+            return new Date();
+        });
+    }, []);
+
     return (
-        <article className="project">
+        <article
+            className="project"
+            ref={projectRef}
+            onMouseEnter={handleMouseEvent}
+        >
             <Link className="project-info link" to={`/post/${post.title}`}>
                 <div className="project-image">
                     {post.thumbnail ? parse(post.thumbnail) :
