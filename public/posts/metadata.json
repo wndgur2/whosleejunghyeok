@@ -61,7 +61,7 @@
         "category": "theory",
         "title": "이진트리",
         "tags": [
-            "Binary Tree",
+            "BinaryTree",
             "자료구조"
         ],
         "date_started": "2023.11.23"
@@ -79,7 +79,7 @@
         "category": "theory",
         "title": "위상정렬",
         "tags": [
-            "Topological Sorting",
+            "TopologicalSorting",
             "자료구조"
         ],
         "date_started": "2023.11.23"
