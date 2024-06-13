@@ -15,21 +15,22 @@ const SearchResult: FunctionComponent = () => {
         const search_text = params.search_text.toLowerCase() as string;
         const search_words = search_text.split(" ") as string[];
 
-        let result = [] as _Post[];
+        let result = posts;
 
         search_words.forEach((word) => {
             if (word.startsWith("#")) {
-                result = posts.filter((post: _Post) =>
+                result = result.filter((post: _Post) =>
                     post.tags.map((tag) => tag.toLowerCase()).includes(word.slice(1))
                 );
             }
             else if (word.startsWith("@")) {
-                result = posts.filter((post: _Post) =>
+                result = result.filter((post: _Post) =>
                     post.category.toLowerCase() === word.slice(1)
                 );
             }
             else {
-                result = posts.filter((post: _Post) =>
+                result = result.filter((post: _Post) =>
+                    post.content.toLowerCase().includes(word) ||
                     post.title.toLowerCase().includes(word)
                 );
             }
@@ -37,18 +38,14 @@ const SearchResult: FunctionComponent = () => {
         setResult(result);
     }, [params, posts]);
 
-    useEffect(() => {
-    }, [result])
-
     return (
-        <div>
-            <div className="search-result">
-                <h2>Search Result for {params.search_text}</h2>
+        <div className="search-result">
+            <h2>Search Result for {params.search_text}</h2>
+            <ul>
                 {result.map((post: _Post, index) => (
-                    <ListedPost title={post.title} tags={post.tags} key={index} />
+                    <ListedPost post={post} key={index} />
                 ))}
-
-            </div>
+            </ul>
         </div>
     );
 }
