@@ -8,13 +8,16 @@ interface TagProps {
 
 const Tag: FunctionComponent<TagProps> = ({ tag }) => {
     return (
-        <Link
-            to={`/search/%23${tag}`}
+        <li
             className="tag"
-            state={{ search_text: `#${tag}` }}
         >
-            {tag}
-        </Link>
+            <Link
+                to={`/search/%23${tag}`}
+                state={{ search_text: `#${tag}` }}
+            >
+                {tag}
+            </Link>
+        </li>
     );
 }
 
