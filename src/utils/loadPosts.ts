@@ -6,13 +6,21 @@ const loadPosts = async ():Promise<_Post[]> =>{
     const posts = await response.json();
 
     for (let key in posts) {
-        await loadMarkdown(posts[key].title)    
+        // load content
+        await loadMarkdown(posts[key].title, posts[key].category)    
         .then((text) => {
-            if(text.startsWith('<!DOCTYPE html>')){
+            if(text === "" || text.startsWith('<!DOCTYPE html>')){
                 posts[key].content = "This post is not available.";
             } else {
                 posts[key].content = text;
             }
+
+            return posts[key].content;
+        })
+        .then(content=>content.match(/<img[^>]+src="([^">]+)".*>/))
+        .then((match)=>{
+            if(match)
+                posts[key].thumbnail = "<img src=" + match[1] + "/>";
         });
     }
     const data:_Post[] = Object.values(posts);
