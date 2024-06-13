@@ -9,7 +9,7 @@
 
 :root {
     --light-bg-color: #f8f8fc;
-    --light-faded-bg-color: #eaeaea;
+    --light-faded-bg-color: #e8e8e8;
     --light-fg-color: #fdfdfd;
     --light-accent-color: #39f;
     --light-action-color: #f0f;
@@ -21,7 +21,7 @@
     --dark-bg-color: #121212;
     --dark-faded-bg-color: #1f1f1f;
     --dark-fg-color: #212121;
-    --dark-accent-color: #00f;
+    --dark-accent-color: #21f;
     --dark-action-color: #f0f;
     --dark-content-color: #f0f0f0;
     --dark-minor-color: #888;
@@ -89,7 +89,6 @@ small {
 
 .link:hover * {
     color: var(--action-color);
-    /* background-color: var(--faded-bg-color); */
 }
 
 .link:hover .tag {
