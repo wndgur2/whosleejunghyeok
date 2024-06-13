@@ -11,7 +11,7 @@ interface HomeCategoryProps {
 const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ isMain, category, children }: HomeCategoryProps) => {
     return (
         <section className={isMain ? "home-category main" : "home-category"}>
-            <Link className="home-category-category link" to={`search/@${category}`}>
+            <Link className="home-category-name link" to={`search/@${category}`} state={{ search_text: '@' + category }}>
                 <h2>{category}</h2>
                 <div className="arrow-wrapper">
                     <IoIosArrowForward size={28} />
