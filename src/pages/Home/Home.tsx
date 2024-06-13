@@ -2,7 +2,7 @@ import { FunctionComponent, useContext } from "react";
 import './Home.css';
 import HomeCategory from "./HomeCategory";
 import HomePost from "../../components/ListedPost";
-import HomeProject from "./HomeProject";
+import ListedProject from "../../components/ListedProject";
 import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
 import _Post from "../../types/_Post";
@@ -20,7 +20,7 @@ const Home: FunctionComponent = () => {
                 <HomeCategory isMain category="Project">
                     {posts.map((post: _Post, index) => (
                         post.category === "project" &&
-                        <HomeProject
+                        <ListedProject
                             key={index}
                             post={post}
                         />
@@ -31,8 +31,7 @@ const Home: FunctionComponent = () => {
                         post.category === "career" &&
                         <HomePost
                             key={index}
-                            title={post.title}
-                            tags={post.tags}
+                            post={post}
                         />))
                     }
                 </HomeCategory>
@@ -41,8 +40,7 @@ const Home: FunctionComponent = () => {
                         post.category === "algorithm" &&
                         <HomePost
                             key={index}
-                            title={post.title}
-                            tags={post.tags}
+                            post={post}
                         />))
                     }
                 </HomeCategory>
@@ -51,8 +49,7 @@ const Home: FunctionComponent = () => {
                         post.category === "theory" &&
                         <HomePost
                             key={index}
-                            title={post.title}
-                            tags={post.tags}
+                            post={post}
                         />))
                     }
                 </HomeCategory>
