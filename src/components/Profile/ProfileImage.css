@@ -5,22 +5,22 @@
     width: calc(10em + 10%);
     aspect-ratio: 1/1;
 
-    padding: 0.5em;
     border-radius: 50%;
-    border: 2px solid var(--border-color);
-    background-color: var(--fg-color);
+    border: 0.4em solid var(--accent-color);
+    background-color: var(--accent-color);
     transition: width 0.5s, border 0.5s, background-color 0.5s, ;
 }
 
 .profile-img-wrapper:hover {
     width: calc(11em + 12%);
     cursor: pointer;
-    border: 0.8em solid var(--border-color);
+    border: 0.8em solid var(--accent-color);
 }
 
 .hidden {
     width: 12em;
-    border: 2px solid var(--minor-color);
+    background-color: var(--minor-color);
+    border: 0.4em solid var(--minor-color);
 }
 
 .hidden:hover {
