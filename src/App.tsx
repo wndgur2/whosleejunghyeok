@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import usePosts from "./hooks/usePosts";
+import { PostsContext } from "./contexts/Posts";
+import { DeviceContext } from "./contexts/Device";
 import Layout from './pages/Layouts/Layout';
 import Home from './pages/Home/Home';
-import NoPage from './pages/NoPage';
-import { useState } from "react";
-import { DeviceContext } from "./contexts/Device";
-import usePosts from "./hooks/usePosts";
-import SearchResult from "./pages/SearchResult/SearchResult";
-import { PostsContext } from "./contexts/Posts";
 import Post from "./pages/Post/Post";
+import SearchResult from "./pages/SearchResult/SearchResult";
+import NoPage from './pages/NoPage';
 import _Post from "./types/_Post";
 
 export default function App() {
-    let isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // let isBrowserDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark' ? true : isBrowserDark);
+    const [isDark, setIsDark] = useState(localStorage.getItem('theme') === 'dark' ? true : false);
     const posts: _Post[] = usePosts();
 
     return (
