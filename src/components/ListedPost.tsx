@@ -11,20 +11,22 @@ interface ListedPostProps {
 
 const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProps) => {
     return (
-        <article className="listed-post">
-            <Link className="listed-post-title link" to={`/post/${post.title}`}>
+        <Link className="listed-post link" to={`/post/${post.title}`}>
+            <header className="listed-post-title">
                 <h3>
                     <BsCaretRightFill className="triangle" size={14} />
-                    <span>{post.title}</span>
+                    {post.title}
                 </h3>
                 <small>{post.date_started}~ {post.date_finished}</small>
-            </Link>
-            <ol className="tags">
-                {post.tags.map((tag, index) => (
-                    <Tag key={index} tag={tag} />
-                ))}
-            </ol>
-        </article>
+            </header>
+            < ol className="tags" >
+                {
+                    post.tags.map((tag, index) => (
+                        <Tag key={index} tag={tag} />
+                    ))
+                }
+            </ol >
+        </Link >
     );
 }
 

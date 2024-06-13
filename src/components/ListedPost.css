@@ -37,9 +37,3 @@
     color: var(--content-color);
     margin-right: 0.4em;
 }
-
-.listed-post .tags {
-    display: flex;
-    flex-flow: row wrap;
-    margin-top: 0.3em;
-}

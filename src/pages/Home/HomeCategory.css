@@ -7,6 +7,12 @@
     margin: 0px;
     margin-top: calc(2em + 2%);
     padding-right: 2em;
+
+    transition: flex-grow 0.2s;
+}
+
+.home-category:hover {
+    flex-grow: 2;
 }
 
 .main {
@@ -31,7 +37,7 @@
 }
 
 .home-category-name:hover {
-    padding: 0.5em 0.6em;
+    padding: 0.6em;
     border-bottom: 1.5px solid var(--action-color);
 }
 

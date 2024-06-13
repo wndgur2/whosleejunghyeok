@@ -4,6 +4,7 @@ import Tag from "../Tag";
 import ProfileImage from "./ProfileImage";
 
 const Profile: FunctionComponent = () => {
+    const stacks = ["HTML", "CSS", "TypeScript", "ReactJs", "NextJs"];
     return (
         <div className="profile">
             <ProfileImage >
@@ -15,11 +16,9 @@ const Profile: FunctionComponent = () => {
                     협력, 성장!
                 </h2>
                 <div className="profile-tags">
-                    <Tag tag="HTML" />
-                    <Tag tag="CSS" />
-                    <Tag tag="TypeScript" />
-                    <Tag tag="ReactJs" />
-                    <Tag tag="NextJs" />
+                    {stacks.map((stack, index) => (
+                        <Tag key={index} tag={stack} />
+                    ))}
                 </div>
             </div>
         </div>

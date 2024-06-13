@@ -49,7 +49,7 @@ main ul {
 }
 
 main li::marker {
-    main: '- ';
+    content: '- ';
     white-space: pre-line;
 }
 

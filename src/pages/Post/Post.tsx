@@ -24,7 +24,7 @@ const Post: FunctionComponent = () => {
                     <header>
                         <section>
                             <h1>{title}</h1>
-                            <ol>
+                            <ol className="tags">
                                 {
                                     post.tags.map((tag: string, index: number) => (
                                         <Tag key={index} tag={tag} />
@@ -35,7 +35,13 @@ const Post: FunctionComponent = () => {
                         <section>
                             {
                                 post.github &&
-                                <Link to={post.github} rel="noreferrer" target="_blank">{post.github.split("//")[1]}</Link>
+                                <Link className="link"
+                                    to={post.github}
+                                    rel="noreferrer"
+                                    target="_blank"
+                                >
+                                    Github Repository
+                                </Link>
                             }
                             <small>{post.date_started} ~  {post.date_finished}</small>
                         </section>
