@@ -3,6 +3,12 @@
     margin: 4vw 10vw;
 
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#home main {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;

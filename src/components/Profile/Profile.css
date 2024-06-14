@@ -4,7 +4,7 @@
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-    margin: 2em 0 5em 0;
+    margin: 2em 0 calc(3em + 3vw) 0;
 
     width: 100%;
 
