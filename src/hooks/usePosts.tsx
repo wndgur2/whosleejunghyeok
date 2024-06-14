@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import loadPosts from "../utils/loadPosts";
 import _Post from "../types/_Post";
+import fetchAllPosts from "../utils/fetchAllPosts";
+import useOctokit from "./useOctokit";
 
 function usePosts() {
     const [posts, setPosts] = useState<_Post[]>([]);
+    const octokit = useOctokit();
 
     useEffect(() => {
         async function fetchPost() {
-            loadPosts(setPosts);
+            fetchAllPosts(octokit, setPosts);
         }
         fetchPost();
-    }, []);
+    }, [octokit]);
 
     return posts;
 }
