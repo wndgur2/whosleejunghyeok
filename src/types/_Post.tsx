@@ -1,5 +1,7 @@
+import _Category from "./_Category";
+
 export default interface _Post {
-    category: "project" | "career" | "algorithm" | "theory";
+    category: _Category;
     title: string;
     content: string;
     tags: string[];
