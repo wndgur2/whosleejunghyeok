@@ -14,12 +14,6 @@
     background: none;
 }
 
-@media screen and (max-width: 560px) {
-    .headModules {
-        visibility: hidden;
-    }
-}
-
 .marquee button {
     white-space: nowrap;
 

@@ -1,34 +1,50 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 import './Footer.css';
 import FooterLink from "./FooterLink";
+import links from "../../consts/footerLinks";
+import _Link from "../../types/_Link";
+import { Link } from "react-router-dom";
+import { DeviceContext } from "../../contexts/Device";
 
 const Footer: FunctionComponent = () => {
+    const innerWidth = useContext(DeviceContext).innerWidth;
     return (
         <footer>
             <div className="links">
-                <FooterLink title="Github" url="https://github.com/wndgur2">
-                    <span>Project</span>
-                    <span>Study</span>
-                    <small>@wndgur2</small>
-                </FooterLink>
-                <FooterLink title="백준 알고리즘" url="https://www.acmicpc.net/user/wndgur2">
-                    <span>Gold1</span>
-                    <span>Python, Cpp</span>
-                    <small>2021.04 ~</small>
-                </FooterLink>
-                <FooterLink title="한경대학교" url="https://www.hknu.ac.kr/hkcommath/index.do">
-                    <span>컴퓨터공학과 학사</span>
-                    <span>4.16 / 4.5</span>
-                    <small>2018.03 ~ 2024.02</small>
-                </FooterLink>
-                <FooterLink title="Email" url="https://mail.google.com/mail/?view=cm&to=dkandjsl@gmail.com">
-                    <small>dkandjsl@gmail.com</small>
-                </FooterLink>
-                <FooterLink title="Youtube" url="https://www.youtube.com/channel/UC0u9muX-t6pTnZhJJxMjh5Q">
-                    <span>Vlog</span>
-                    <span>Demo videos</span>
-                    <small>@junghyeok_lee6710</small>
-                </FooterLink>
+                {
+                    (innerWidth > 768) ? <>
+                        {links.map((link: _Link, i) => (
+                            <FooterLink key={i} url={link.url} title={link.title}>
+                                {
+                                    link.children.map(([element, innerValue]: string[], index) => {
+                                        switch (element) {
+                                            case 'span':
+                                                return <span key={index}>{innerValue}</span>
+                                            case 'small':
+                                                return <small key={index}>{innerValue}</small>
+                                            default:
+                                                return <></>;
+                                        }
+                                    })
+                                }
+                            </FooterLink>
+                        ))
+                        }
+                    </> :
+                        <>
+                            {links.slice(0, 3).map((link: _Link, i) => (
+                                <Link key={i} to={link.url} className="footer-normal-link link">
+                                    <h4>{link.title}</h4>
+                                    {
+                                        link.children.map((value: string[], index) => {
+                                            return <small key={index}>{value[1]}</small>;
+                                        })
+                                    }
+                                </Link>
+                            ))
+                            }
+                        </>
+                }
             </div>
         </footer>
     );

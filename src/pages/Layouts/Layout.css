@@ -4,6 +4,7 @@
 
     overflow: hidden;
     background-color: var(--bg-color);
+    transition: background-color 0.8s;
 }
 
 #body-container {

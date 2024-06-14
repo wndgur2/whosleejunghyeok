@@ -62,3 +62,14 @@ main img {
 
     margin: 1em 0px;
 }
+
+main table {
+    display: inline;
+    margin: 1em;
+}
+
+main td {
+    padding: 0.5em;
+    border: 1px solid var(--border-color);
+    background-color: var(--fg-color);
+}

@@ -49,7 +49,7 @@ const FooterLink: FunctionComponent<FooterLinkProps> = ({ title, children, url }
             current.removeEventListener("mouseleave", mouseLeave);
             current.removeEventListener("touchstart", mouseEnter);
         }
-    }, []);
+    }, [mouseEnter, mouseLeave]);
 
     return (
         <Link className="footer-link" to={url} rel="noreferrer" target="_blank" ref={itemRef}>

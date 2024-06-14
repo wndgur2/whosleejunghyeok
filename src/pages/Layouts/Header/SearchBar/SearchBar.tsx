@@ -25,14 +25,16 @@ const SearchBar: FunctionComponent<SearchBarProps> = () => {
                     (e) => {
                         e.preventDefault();
                         if (search) router(`/search/${encodeURIComponent(search)}`, {
-                            state: {
-                                search_text: search
-                            }
+                            state: { search_text: search }
+                        });
+                        else router(`/`, {
+                            state: { search_text: "" }
                         });
                     }
                 }
             >
                 <input
+                    type="search"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
