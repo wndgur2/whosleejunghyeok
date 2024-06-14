@@ -5,35 +5,31 @@
 
     height: fit-content;
 
-    background-color: var(--faded-bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 1em;
+    background-color: var(--faded-bg-color);
 
     transition: padding 0.2s;
 }
 
 .listed-post:hover {
-    padding: 0.6em;
+    padding: 0.7em;
 }
 
 .listed-post:hover>.listed-post-title {
     padding: 0.5em;
 }
 
-.listed-post-title {
+.listed-post>header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4em;
+    gap: 1em;
     padding: 0.3em;
     transition: padding 0.2s;
 }
 
-.listed-post-title>h3 {
+.listed-post>header>h3 {
     color: var(--content-color);
     text-wrap: nowrap;
-}
-
-.triangle {
-    color: var(--content-color);
-    margin-right: 0.4em;
 }

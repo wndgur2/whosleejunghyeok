@@ -8,6 +8,7 @@
     min-width: 13em;
     margin: 0.8em;
 
+    border: 1px solid var(--border-color);
     border-radius: 1em;
     background-color: var(--faded-bg-color);
 
@@ -17,13 +18,17 @@
 }
 
 .project:hover {
-    width: 14em;
-    flex-grow: 0.21;
-    margin: 0.8em 0.3em;
+    width: 13.6em;
+    flex-grow: 0.22;
+    margin: 0.8em 0.5em;
 }
 
 @media screen and (max-width: 768px) {
     .project {
+        flex-grow: 1;
+    }
+
+    .project:hover {
         flex-grow: 1;
     }
 }
@@ -56,14 +61,20 @@
 .project-info {
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
+    gap: 0.4em;
     padding: 0.8em;
+}
+
+.project-info>small {
+    margin: 0.3em 0px 0.2em 0px;
 }
 
 .project-title {
     margin: 0.6em 0px 0px 0px;
 }
 
-.project.fix-width .tags {
-    width: 12em;
+.project.fix-width:hover {
+    width: 13em;
+    flex-grow: 0.2;
+    margin: 0.8em;
 }

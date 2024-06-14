@@ -35,9 +35,9 @@ const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
                         <div><CiImageOff size={32} /></div>
                     }
                 </div>
-                <h3 className="project-title">{post.title}</h3>
-                <p className="project-discription">{post.description}</p>
-                <small className="project-date">{post.date_started}~ {post.date_finished}</small>
+                <h2 className="project-title">{post.title}</h2>
+                <p>{post.description}</p>
+                <small>{post.date_started}~ {post.date_finished}</small>
                 <ol className="tags">
                     {post.tags.map((tag, index) => (
                         <Tag key={index} tag={tag} />
