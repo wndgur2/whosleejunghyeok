@@ -9,3 +9,9 @@ TODO
 - post contents 불러오기
 - build && 배포
 
+TODO
+- wndgur2.github.io에 metadata.json 추가하기.
+- wndgur2.github.io action에 md 파일들 metadata.json에 정리하는 shell script 짜기
+- whosleejunghyeok은, 해당 json을 raw.github를 이용해 받아오고, 그 metadata를 바탕으로 posts 불러와 사용하기
+- 이렇게 하면, react page를 매번 build할 필요가 없다.
+- ~~router 해결하기~~

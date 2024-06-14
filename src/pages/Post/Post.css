@@ -12,21 +12,22 @@
     align-items: center;
     gap: 1em;
 
+    border: 1px solid var(--border-color);
     background-color: var(--faded-bg-color);
     border-radius: 1em;
 }
 
-header h1 {
+.post header h1 {
     margin-left: 4px;
 }
 
-header>section {
+.post header>section {
     display: flex;
     flex-flow: column nowrap;
     gap: 0.8em;
 }
 
-header>section:last-child {
+.post header>section:last-child {
     align-items: flex-end;
 }
 
@@ -34,26 +35,26 @@ header>section:last-child {
     margin: 1em;
 }
 
-main h1,
-main h2 {
+.post main h1,
+.post main h2 {
     margin: 1em 0px;
 }
 
-main h3 {
+.post main h3 {
     margin: 0.5em 0px;
 }
 
-main ul {
+.post main ul {
     margin: 0.5em 0px 1em 0px;
     padding-left: 1em;
 }
 
-main li::marker {
+.post main li::marker {
     content: '- ';
     white-space: pre-line;
 }
 
-main img {
+.post main img {
     display: block;
     max-width: 60vw;
     max-height: 60vh;
@@ -63,12 +64,12 @@ main img {
     margin: 1em 0px;
 }
 
-main table {
+.post main table {
     display: inline;
     margin: 1em;
 }
 
-main td {
+.post main td {
     padding: 0.5em;
     border: 1px solid var(--border-color);
     background-color: var(--fg-color);

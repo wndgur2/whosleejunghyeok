@@ -10,7 +10,7 @@ const fetchAllPosts = async (octokit:Octokit, setPosts:React.Dispatch<React.SetS
 
     const max_depth = 3;
 
-    const searchForPosts = async (category:_Category , path:string, depth:number) => {
+    const searchForPosts = (category:_Category , path:string, depth:number) => {
         if(depth >= max_depth) return;
 
         octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {

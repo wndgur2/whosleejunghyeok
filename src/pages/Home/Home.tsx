@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext, useEffect } from "react";
 import './Home.css';
 import HomeCategory from "./HomeCategory";
 import HomePost from "../../components/ListedPost";
@@ -7,10 +7,19 @@ import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
 import _Post from "../../types/_Post";
 import Loading from "../../components/Loading";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
     const categories = ["Project", "Career", "Algorithm", "Theory"];
+
+    const router = useNavigate();
+    const searchParams = useSearchParams()[0];
+    const lost_url = searchParams.get("lost_url");
+
+    useEffect(() => {
+        if (lost_url) router(lost_url);
+    }, [lost_url, router]);
 
     const renderCategory = (category: string) => {
         let count = 0;
