@@ -10,52 +10,44 @@ import Loading from "../../components/Loading";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
-    // const posts = [] as _Post[];
+    const categories = ["Project", "Career", "Algorithm", "Theory"];
+
+    const renderCategory = (category: string) => {
+        let count = 0;
+        return (
+            <HomeCategory key={category} isMain={category === "Project"} category={category}>
+                {
+                    posts.map((post: _Post, idx) => {
+                        if (post.category !== category.toLowerCase() || count >= 5)
+                            return <div key={idx}></div>;
+                        count += 1;
+
+                        if (category === "Project")
+                            return <ListedProject
+                                key={idx}
+                                post={post}
+                            />
+                        return <HomePost
+                            key={idx}
+                            post={post}
+                        />
+                    })
+                }
+            </HomeCategory>
+        );
+    }
+
     return (
         <div id="home">
 
             <Profile />
 
-            {posts.length ? <>
-                <HomeCategory isMain category="Project">
-                    {posts.map((post: _Post, index) => (
-                        post.category === "project" &&
-                        <ListedProject
-                            key={index}
-                            post={post}
-                        />
-                    ))}
-                </HomeCategory>
-                <HomeCategory category="Career">
-                    {posts.map((post: _Post, index) => (
-                        post.category === "career" &&
-                        <HomePost
-                            key={index}
-                            post={post}
-                        />))
-                    }
-                </HomeCategory>
-                <HomeCategory category="Algorithm">
-                    {posts.map((post: _Post, index) => (
-                        post.category === "algorithm" &&
-                        <HomePost
-                            key={index}
-                            post={post}
-                        />))
-                    }
-                </HomeCategory>
-                <HomeCategory category="Theory">
-                    {posts.map((post: _Post, index) => (
-                        post.category === "theory" &&
-                        <HomePost
-                            key={index}
-                            post={post}
-                        />))
-                    }
-                </HomeCategory>
-            </> :
-                <Loading phrase="Fetching data" />
-            }
+            <main>
+                {posts.length ?
+                    categories.map(renderCategory) :
+                    <Loading phrase="Fetching data" />
+                }
+            </main>
         </div>
     );
 }
