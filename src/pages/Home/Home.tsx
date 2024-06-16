@@ -8,10 +8,11 @@ import { PostsContext } from "../../contexts/Posts";
 import _Post from "../../types/_Post";
 import Loading from "../../components/Loading";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import _Category from "../../types/_Category";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
-    const categories = ["Project", "Career", "Algorithm", "Theory"];
+    const categories: _Category[] = ["project", "career", "algorithm", "study"];
 
     const router = useNavigate();
     const searchParams = useSearchParams()[0];
@@ -21,17 +22,17 @@ const Home: FunctionComponent = () => {
         if (lost_url) router(lost_url);
     }, [lost_url, router]);
 
-    const renderCategory = (category: string) => {
+    const renderCategory = (category: _Category) => {
         let count = 0;
         return (
-            <HomeCategory key={category} isMain={category === "Project"} category={category}>
+            <HomeCategory key={category} isMain={category === "project"} category={category}>
                 {
                     posts.map((post: _Post, idx) => {
                         if (post.category.toLowerCase() !== category.toLowerCase() || count >= 5)
-                            return <div key={idx}></div>;
+                            return null;
                         count += 1;
 
-                        if (category === "Project")
+                        if (category === "project")
                             return <ListedProject
                                 key={idx}
                                 post={post}
@@ -40,7 +41,7 @@ const Home: FunctionComponent = () => {
                             key={idx}
                             post={post}
                         />
-                    })
+                    }).filter(post => post !== null)
                 }
             </HomeCategory>
         );
