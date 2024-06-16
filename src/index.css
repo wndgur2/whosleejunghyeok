@@ -17,12 +17,12 @@
     --light-minor-color: #888;
     --light-semi-minor-color: #424242;
     --light-icon-color: #39f;
-    --light-border-color: #39f;
+    --light-border-color: #39f6;
 
     --dark-bg-color: #121212;
     --dark-faded-bg-color: #1b1b1c;
     --dark-fg-color: #212121;
-    --dark-accent-color: #21f;
+    --dark-accent-color: #64f;
     --dark-action-color: #f0f;
     --dark-content-color: #f0f0f0;
     --dark-minor-color: #888;
@@ -96,8 +96,10 @@ small {
     background-color: var(--faded-bg-color);
 }
 
+.link:hover h1,
 .link:hover h2,
 .link:hover h3,
+.link:hover span,
 .link:hover path {
     color: var(--action-color);
 }

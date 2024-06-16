@@ -26,9 +26,8 @@
 }
 
 .search-bar input {
-    width: 100%;
+    width: 96%;
 
-    font-size: calc(medium - 2px);
     color: var(--content-color);
 
     border: none;

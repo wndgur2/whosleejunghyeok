@@ -7,6 +7,13 @@
     flex-wrap: nowrap;
 }
 
+@media screen and (max-width: 768px) {
+    #home {
+        width: 90vw;
+        margin: 4vw 5vw;
+    }
+}
+
 #home main {
     display: flex;
     flex-direction: row;

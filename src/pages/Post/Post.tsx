@@ -55,10 +55,9 @@ const Post: FunctionComponent = () => {
                             <small>{post.date_started} ~  {post.date_finished}</small>
                         </section>
                     </header>
-                    <main>
-                        <Markdown>{post.content}</Markdown>
+                    <main className="post-content">
+                        <Markdown options={{ wrapper: 'div', }}>{post.content}</Markdown>
                     </main>
-
                 </div> :
                 <Loading phrase="Loading post" />
         }</div>

@@ -31,55 +31,68 @@
     align-items: flex-end;
 }
 
-.post>main {
-    margin: 1em;
+.post-content {
+    margin-top: 1em;
+    padding: 2em 1em;
+    background-color: var(--faded-bg-color);
+    border-radius: 1em;
 }
 
-.post main h1,
-.post main h2 {
-    margin: 1em 0px;
+.post-content>div>*:first-child {
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
-.post main h3 {
+.post-content h1,
+.post-content h2 {
+    margin: 2em 0px 1em 0px;
+}
+
+.post-content h3 {
+    margin: 1em 0px 0.5em 0px;
+}
+
+.post-content p {
     margin: 0.5em 0px;
 }
 
-.post main ul {
+.post-content ul {
     margin: 0.5em 0px 1em 0px;
     padding-left: 1em;
 }
 
-.post main li::marker {
+.post-content li::marker {
     content: '- ';
     white-space: pre-line;
 }
 
-.post main img {
+.post-content img {
     display: block;
-    max-width: 60vw;
-    max-height: 60vh;
     object-fit: contain;
     object-position: top left;
 
+    max-width: 100%;
+
     margin: 1em 0px;
+    border-radius: 1em;
 }
 
-.post main table {
+.post-content table {
     display: inline;
     margin: 1em;
 }
 
-.post main td {
+.post-content td {
     padding: 0.5em;
     border: 1px solid var(--border-color);
     background-color: var(--fg-color);
 }
 
-.post main mark {
+.post-content mark {
     background-color: var(--minor-color);
     border-radius: 0.2em;
 }
 
-.post main pre {
-    margin: 1em 0px;
+.post-content pre {
+    margin: 2em 0px;
 }

@@ -4,6 +4,7 @@
     padding: 0.5em;
 
     height: fit-content;
+    max-width: 100%;
 
     border: 1px solid var(--border-color);
     border-radius: 1em;
@@ -16,10 +17,6 @@
     padding: 0.7em;
 }
 
-.listed-post:hover>.listed-post-title {
-    padding: 0.5em;
-}
-
 .listed-post>header {
     display: flex;
     align-items: center;
@@ -30,6 +27,11 @@
 }
 
 .listed-post>header>h3 {
+    max-width: 45vw;
+    width: fit-content;
+
     color: var(--content-color);
     text-wrap: nowrap;
+
+    overflow: hidden;
 }

@@ -4,7 +4,7 @@
     flex-grow: 0.2;
     justify-content: start;
 
-    width: 13em;
+    /* width: 13em; */
     min-width: 13em;
     margin: 0.8em;
     padding: 0.8em;
@@ -16,7 +16,8 @@
 
     overflow: hidden;
 
-    transition: flex-grow 0.2s, width 0.2s, margin 0.2s;
+    /* transition: flex-grow 0.2s, width 0.2s; */
+    transition: flex-grow 0.2s;
 }
 
 .project>small {
@@ -24,9 +25,8 @@
 }
 
 .project:hover {
-    width: 13.6em;
-    flex-grow: 0.22;
-    margin: 0.8em 0.5em;
+    /* width: 13.6em; */
+    flex-grow: 0.25;
 }
 
 @media screen and (max-width: 768px) {
@@ -45,14 +45,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 1em;
-    overflow: hidden;
 }
 
 .project-image>img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
     object-position: top;
+    border-radius: 1em;
 }
 
 .project-image>div {
@@ -69,7 +69,7 @@
 }
 
 .project.fix-width:hover {
-    width: 13em;
+    /* width: 13em; */
     flex-grow: 0.2;
     margin: 0.8em;
 }

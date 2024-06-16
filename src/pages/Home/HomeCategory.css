@@ -2,13 +2,18 @@
     flex-grow: 1;
 
     min-width: 15em;
-    min-height: 30vh;
 
     margin: 0px;
     margin-top: calc(2em + 2%);
     padding-right: 2em;
 
     transition: flex-grow 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    .home-category {
+        padding-right: 0em;
+    }
 }
 
 .home-category:hover {
@@ -36,12 +41,13 @@
 }
 
 .home-category-name:hover {
-    padding: 0.6em 1em 0.4em 1em;
+    padding: 0.6em 1.2em 0.4em 1.2em;
     border-radius: 1.5em 1.5em 0px 0px;
     border-bottom: 1.5px solid var(--action-color);
 }
 
-.home-category-name>h2 {
+.home-category-name>h1 {
+    font-size: xx-large;
     color: var(--accent-color);
 }
 
@@ -70,4 +76,12 @@
 .main .posts {
     flex-direction: row;
     align-items: start;
+}
+
+.no-posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
