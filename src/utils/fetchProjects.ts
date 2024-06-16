@@ -2,7 +2,7 @@ import _Post from "../types/_Post";
 import fetchRawData from "./fetchRawData";
 
 const fetchProjects = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>) =>{
-    let response = await fetch('/posts/metadata.json');
+    let response = await fetch('/metadata.json');
     const data = await response.json();
 
     const posts:_Post[] = Object.values(data);
@@ -14,12 +14,17 @@ const fetchProjects = async (setPosts:React.Dispatch<React.SetStateAction<_Post[
             if(text === "" || text.startsWith('<!DOCTYPE html>'))
                 post.content = "This post is not available.";
             else post.content = text;
-            const img = post.content.match(/<img[^>]+src="([^">]+)".*>/);
-            if(img){
-                post.thumbnail = "<img src=" + img[1] + "/>";
-                new Image().src = img[1];
-            }
+
             post.id = post.title;
+
+            const img = new Image();
+            img.src = "/images/" + post.title.toLowerCase() + ".jpeg";
+            
+            post.thumbnail = '<img src="' + img.src + '" alt="' + post.title + '" />';
+            //     const img = post.content.match(/<img[^>]+src="([^">]+)".*>/);
+            // if(img){
+            //     post.thumbnail = '<img src="' + img[1] + '" alt="' + post.title + '" />';
+            // }
             setPosts((prevPosts:_Post[]):_Post[] => {
                 if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
                 return [...prevPosts, post];
