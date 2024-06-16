@@ -2,8 +2,10 @@
     padding: 0.2em 0.5em;
     margin: 5px;
 
-    display: inline-block;
     cursor: pointer;
+
+    color: var(--content-color);
+    font-size: 0.8em;
 
     border-radius: 0.7em;
     box-shadow: 0 0 0 1px var(--border-color);
@@ -14,13 +16,5 @@
 .tag:hover {
     box-shadow: 0 0 0 2px var(--action-color);
     padding: 0.3em 0.6em;
-}
-
-.tag a {
-    color: var(--content-color);
-    font-size: 0.8em;
-}
-
-.tag:hover a {
     color: var(--action-color);
 }

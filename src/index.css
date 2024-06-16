@@ -8,8 +8,8 @@
 }
 
 :root {
-    --light-bg-color: #f8f8fc;
-    --light-faded-bg-color: #f8f8fc;
+    --light-bg-color: #fafafc;
+    --light-faded-bg-color: #f5f5f5;
     --light-fg-color: #fdfdfd;
     --light-accent-color: #39f;
     --light-action-color: #f0f;
@@ -68,6 +68,10 @@
     --border-color: var(--dark-border-color);
 }
 
+li {
+    list-style-type: none;
+}
+
 
 a {
     color: var(--accent-color);
@@ -92,8 +96,8 @@ small {
     background-color: var(--faded-bg-color);
 }
 
-.link:hover>*,
-.link:hover>*>*,
+.link:hover h2,
+.link:hover h3,
 .link:hover path {
     color: var(--action-color);
 }
@@ -107,8 +111,4 @@ small {
     flex-flow: row wrap;
     margin-top: 0.3em;
     align-items: center;
-}
-
-li {
-    list-style-type: none;
 }

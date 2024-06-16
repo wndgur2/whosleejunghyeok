@@ -74,3 +74,12 @@
     border: 1px solid var(--border-color);
     background-color: var(--fg-color);
 }
+
+.post main mark {
+    background-color: var(--minor-color);
+    border-radius: 0.2em;
+}
+
+.post main pre {
+    margin: 1em 0px;
+}

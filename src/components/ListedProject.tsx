@@ -25,11 +25,11 @@ const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
 
     return (
         <article
-            className="project"
+            className="project link"
             ref={projectRef}
             onMouseEnter={handleMouseEvent}
         >
-            <Link className="project-info link" to={`/post/${post.title}`}>
+            <Link to={`/post/${post.title}`}>
                 <div className="project-image">
                     {post.thumbnail ? parse(post.thumbnail) :
                         <div><CiImageOff size={32} /></div>

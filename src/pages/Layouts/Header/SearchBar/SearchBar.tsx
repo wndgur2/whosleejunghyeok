@@ -9,7 +9,7 @@ interface SearchBarProps {
 }
 
 const SearchBar: FunctionComponent<SearchBarProps> = () => {
-    const router = useNavigate();
+    const navigate = useNavigate();
     const [search, setSearch] = useState<string>("");
     let { state } = useLocation();
 
@@ -24,10 +24,10 @@ const SearchBar: FunctionComponent<SearchBarProps> = () => {
                 onSubmit={
                     (e) => {
                         e.preventDefault();
-                        if (search) router(`/search/${encodeURIComponent(search)}`, {
+                        if (search) navigate(`/search/${encodeURIComponent(search)}`, {
                             state: { search_text: search }
                         });
-                        else router(`/`, {
+                        else navigate(`/`, {
                             state: { search_text: "" }
                         });
                     }

@@ -12,7 +12,11 @@ const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProp
     return (
         <Link className="listed-post link" to={`/post/${post.title}`}>
             <header>
-                <h3>{post.title}</h3>
+                <h3>
+                    {post.site && <span>{post.site}: </span>}
+                    <span>{post.title}</span>
+                    {post.number && <span>_{post.number}</span>}
+                </h3>
                 <small>{post.date_started}~ {post.date_finished}</small>
             </header>
             < ol className="tags" >

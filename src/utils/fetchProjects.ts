@@ -14,16 +14,17 @@ const fetchProjects = async (setPosts:React.Dispatch<React.SetStateAction<_Post[
             if(text === "" || text.startsWith('<!DOCTYPE html>'))
                 post.content = "This post is not available.";
             else post.content = text;
-            setPosts(Object.values(data));
-            return post.content;
+            const img = post.content.match(/<img[^>]+src="([^">]+)".*>/);
+            if(img){
+                post.thumbnail = "<img src=" + img[1] + "/>";
+                new Image().src = img[1];
+            }
+            post.id = post.title;
+            setPosts((prevPosts:_Post[]):_Post[] => {
+                if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
+                return [...prevPosts, post];
+            });
         })
-        .then(content=>content.match(/<img[^>]+src="([^">]+)".*>/))
-        .then((match)=>{
-            if(!match) return;
-            post.thumbnail = "<img src=" + match[1] + "/>";
-            new Image().src = match[1];
-            setPosts(Object.values(data));
-        });
     });
 
     return posts;

@@ -27,7 +27,7 @@ const Home: FunctionComponent = () => {
             <HomeCategory key={category} isMain={category === "Project"} category={category}>
                 {
                     posts.map((post: _Post, idx) => {
-                        if (post.category !== category.toLowerCase() || count >= 5)
+                        if (post.category.toLowerCase() !== category.toLowerCase() || count >= 5)
                             return <div key={idx}></div>;
                         count += 1;
 

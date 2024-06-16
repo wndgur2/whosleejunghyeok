@@ -4,13 +4,22 @@ import Tag from "../../components/Tag";
 import _Post from "../../types/_Post";
 import { PostsContext } from "../../contexts/Posts";
 import Markdown from "markdown-to-jsx";
-import "./Post.css";
 import Loading from "../../components/Loading";
+import hljs from "highlight.js";
+import 'highlight.js/styles/github-dark-dimmed.css';
+import "./Post.css";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
     const title = useParams().post_title;
     const [post, setPost] = useState<_Post>();
+
+    useEffect(() => {
+        const nodes = document.querySelectorAll('pre code');
+        nodes.forEach((node) => {
+            hljs.highlightElement(node as HTMLElement);
+        })
+    }, [post]);
 
     useEffect(() => {
         if (!posts) return;

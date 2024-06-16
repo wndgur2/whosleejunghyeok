@@ -10,9 +10,9 @@
     "@types/node": "^16.18.97",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
+    "highlight.js": "^11.9.0",
     "html-react-parser": "^5.1.10",
     "markdown-to-jsx": "^7.4.7",
-    "octokit": "^4.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.4",
@@ -46,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-highlight": "^0.12.8"
   }
 }

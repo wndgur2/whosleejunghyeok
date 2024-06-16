@@ -27,17 +27,17 @@
     justify-content: space-between;
 
     margin-bottom: 0.8em;
-    padding: 0.4em 0.6em;
+    padding: 0.4em 0.1em 0.3em 0.1em;
 
-    border-radius: 1em 1em 0px 0px;
     border-bottom: 1.5px solid var(--accent-color);
     cursor: pointer;
 
-    transition: padding 0.2s;
+    transition: padding 0.2s, border-radius 0.2s;
 }
 
 .home-category-name:hover {
-    padding: 0.6em;
+    padding: 0.6em 1em 0.4em 1em;
+    border-radius: 1.5em 1.5em 0px 0px;
     border-bottom: 1.5px solid var(--action-color);
 }
 
