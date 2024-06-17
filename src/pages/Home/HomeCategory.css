@@ -20,7 +20,7 @@
     flex-grow: 1.25;
 }
 
-.main {
+.row {
     width: 100%;
     margin-bottom: 1.4em;
 }
@@ -73,7 +73,7 @@
     overflow: scroll;
 }
 
-.main .posts {
+.row .posts {
     flex-direction: row;
     align-items: start;
 }

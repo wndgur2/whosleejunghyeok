@@ -32,7 +32,7 @@ const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
             <Link to={`/post/${post.title}`}>
                 <div className="project-image">
                     {post.thumbnail ? parse(post.thumbnail) :
-                        <div><CiImageOff size={32} /></div>
+                        <CiImageOff className="no-image" size={32} />
                     }
                 </div>
                 <h2 className="project-title">{post.title}</h2>

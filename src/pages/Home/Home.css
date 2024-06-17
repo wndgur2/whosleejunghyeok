@@ -1,6 +1,6 @@
 #home {
-    width: 80vw;
-    margin: 4vw 10vw;
+    width: 88vw;
+    margin: 4vw 6vw;
 
     display: flex;
     flex-direction: column;
@@ -10,7 +10,6 @@
 @media screen and (max-width: 768px) {
     #home {
         width: 90vw;
-        margin: 4vw 5vw;
     }
 }
 

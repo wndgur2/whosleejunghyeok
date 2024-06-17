@@ -25,7 +25,7 @@ const Home: FunctionComponent = () => {
     const renderCategory = (category: _Category) => {
         let count = 0;
         return (
-            <HomeCategory key={category} isMain={category === "project"} category={category}>
+            <HomeCategory key={category} isRow={category === "project"} category={category}>
                 {
                     posts.map((post: _Post, idx) => {
                         if (post.category.toLowerCase() !== category.toLowerCase() || count >= 5)
@@ -53,9 +53,10 @@ const Home: FunctionComponent = () => {
             <Profile />
 
             <main>
-                {posts.length ?
-                    categories.map(renderCategory) :
-                    <Loading phrase="Fetching data" />
+                {
+                    posts.length ?
+                        categories.map(renderCategory) :
+                        <Loading phrase="Fetching data" />
                 }
             </main>
         </div>
