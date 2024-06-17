@@ -49,14 +49,20 @@ const Post: FunctionComponent = () => {
                                     rel="noreferrer"
                                     target="_blank"
                                 >
-                                    Github Repository
+                                    Github
                                 </Link>
                             }
                             <small>{post.date_started} ~  {post.date_finished}</small>
                         </section>
                     </header>
                     <main className="post-content">
-                        <Markdown options={{ wrapper: 'div', }}>{post.content}</Markdown>
+                        <Markdown options={{ wrapper: 'div', }}>
+                            {
+                                post.content +
+                                (post.category === "algorithm" ?
+                                    "\n\n```" + post.language + "\n\n" + post.code + "```" : "")
+                            }
+                        </Markdown>
                     </main>
                 </div> :
                 <Loading phrase="Loading post" />

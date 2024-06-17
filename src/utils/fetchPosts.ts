@@ -16,7 +16,8 @@ const fetchPosts = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>
                 if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
                 return [...prevPosts, post];
             });
-        });
+        })
+        .catch((err) => console.log(err));
     });
 }
 
@@ -38,21 +39,66 @@ const getPost = (data:string, url:string):_Post|null => {
         content: "No content found.",
         tags: [],
         date_started: "No date found.",
+        github: "https://github.com/wndgur2",
     };
     const header = data.match(/---\n(.+)\n---/s);
     if(header){
         const headerData = header[1].toString().split("\n");
         headerData.forEach((line:string) => {
-            const [key, value] = line.split(": ");
+            let [key, value] = line.split(": ");
+            if(key==="category") value = value.toLowerCase();
             if(key && value)
                 post[key] = key === "tags"? value.split(", "): value;
         });
     }
     else return null;
 
+
     const content = data.match(/---\n.+\n---\n(.+)/s);
     if(content)
         post.content = content[1].toString();
+
+    post.github = "https://github.com/wndgur2/wndgur2.github.io/tree/main/" + url;
+    console.log(post.category)
+    
+    if(post.category !== "algorithm") return post;
+    
+
+    const code_path = url.split("/");
+    
+    code_path.pop();
+
+    post.tags.forEach((tag:string) => {
+        switch(tag.toLowerCase()){
+            case "c++":
+                post.language = "cpp";
+                break;
+            case "python":
+                post.language = "py";
+                break;
+            case "javascript":
+                post.language = "js";
+                break;
+            case "c":
+                post.language = "c";
+                break;
+            default:
+                break;
+        }
+    });
+
+    const filename = code_path[code_path.length - 1].replaceAll(" ", "");
+    code_path.push(filename + '.' + post.language);
+    fetch("https://raw.githubusercontent.com/wndgur2/wndgur2.github.io/main/" + code_path.join("/"))
+    .then((response) => response.text())
+    .catch((err) => {
+        console.log(err);
+        return "";
+    })
+    .then((data) => {
+        post.code = data;
+    })
+
     return post;
 }
 
