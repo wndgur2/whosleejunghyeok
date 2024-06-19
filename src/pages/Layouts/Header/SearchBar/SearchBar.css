@@ -39,5 +39,5 @@ input:focus {
 }
 
 .search-icon {
-    color: var(--icon-color);
+    stroke: var(--icon-color);
 }

@@ -1,4 +1,4 @@
-.toggle-box {
+.theme {
     z-index: 2;
     position: absolute;
 
@@ -39,7 +39,7 @@
     transition: transform 0.3s, background-color 0.5s, color 0.3s;
 }
 
-.icon {
+.theme-icon {
     position: absolute;
     background-color: transparent;
     pointer-events: none;

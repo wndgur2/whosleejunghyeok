@@ -56,5 +56,18 @@
         "date_started": "2023.01.01",
         "date_finished": "2023.11.14",
         "github": "https://github.com/wndgur2/cheese"
+    },
+    "Reptopia": {
+        "category": "project",
+        "title": "Reptopia",
+        "description": "파충류 매니아를 위한 커뮤니티",
+        "tags": [
+            "AngularJs",
+            "CSS",
+            "Javascript"
+        ],
+        "date_started": "2022.04.01",
+        "date_finished": "2022.06.14",
+        "github": "https://github.com/wndgur2/reptopia"
     }
 }

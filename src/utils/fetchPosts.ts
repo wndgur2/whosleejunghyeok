@@ -7,6 +7,8 @@ const fetchPosts = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>
 
     if(Object.prototype.toString.call(urls) === '[object Object]')
         urls = urls.urls;
+
+    urls.pop();
     
     urls.forEach(async (url:string)=>{
         await fetchPost(url)
@@ -14,7 +16,11 @@ const fetchPosts = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>
             if(!post) return;
             setPosts((prevPosts:_Post[]):_Post[] => {
                 if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
-                return [...prevPosts, post];
+                return [...prevPosts, post].sort((a:_Post, b:_Post) => {
+                    if(a.date_started > b.date_started) return -1;
+                    if(a.date_started < b.date_started) return 1;
+                    return 0;
+                });
             });
         })
         .catch((err) => console.log(err));
@@ -59,7 +65,6 @@ const getPost = (data:string, url:string):_Post|null => {
         post.content = content[1].toString();
 
     post.github = "https://github.com/wndgur2/wndgur2.github.io/tree/main/" + url;
-    console.log(post.category)
     
     if(post.category !== "algorithm") return post;
     
@@ -86,6 +91,8 @@ const getPost = (data:string, url:string):_Post|null => {
                 break;
         }
     });
+
+    if(!post.language) return post;
 
     const filename = code_path[code_path.length - 1].replaceAll(" ", "");
     code_path.push(filename + '.' + post.language);
