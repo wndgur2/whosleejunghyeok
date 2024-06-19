@@ -1,4 +1,6 @@
 .project {
+    flex-shrink: 0;
+    max-width: 20em;
     width: fit-content;
     height: fit-content;
 
@@ -23,6 +25,10 @@
 .project p {
     width: 100%;
     word-wrap: break-word;
+}
+
+.project-date {
+    text-wrap: nowrap;
 }
 
 .project-image-wrapper {

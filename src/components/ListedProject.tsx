@@ -25,7 +25,7 @@ const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
             <div className="project-info">
                 <h2 className="project-title">{post.title}</h2>
                 <p>{post.description}</p>
-                <small>{post.date_started}~ {post.date_finished}</small>
+                <small className="project-date">{post.date_started}~ {post.date_finished}</small>
             </div>
             <ol className="tags">
                 {post.tags.map((tag, index) => (
