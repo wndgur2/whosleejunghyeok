@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import usePosts from "./hooks/usePosts";
 import { PostsContext } from "./contexts/Posts";
 import { DeviceContext } from "./contexts/Device";
