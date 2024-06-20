@@ -51,10 +51,6 @@
     overflow: scroll;
 }
 
-#home .posts>*:first-child {
-    margin-left: 0;
-}
-
 
 .scroll-buttons {
     display: flex;

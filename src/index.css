@@ -10,13 +10,13 @@
 :root {
     --light-fg-color: #fdfdfd;
     --light-bg-color: #eee;
-    --light-hover-bg-color: #fdfdfd;
-    --light-dimmed-fg-color: #e0e0e0;
+    --light-hover-bg-color: #fff8;
+    --light-dimmed-fg-color: #f0f0f0;
     --light-accent-color: #13f;
     --light-dimmed-accent-color: #13f2;
     --light-accent-content-color: #082df0cc;
     --light-content-color: #121212;
-    --light-action-color: #f0f;
+    --light-action-color: #f4a;
     --light-minor-color: #888;
     --light-icon-color: #13f;
     --light-border-color: #13f;
@@ -25,7 +25,7 @@
     --dark-fg-color: #181818;
     --dark-bg-color: #080808;
     --dark-hover-bg-color: #101010;
-    --dark-dimmed-fg-color: #262626;
+    --dark-dimmed-fg-color: #242424;
     --dark-accent-color: #64f;
     --dark-dimmed-accent-color: #64f2;
     --dark-accent-content-color: #86fc;
@@ -131,7 +131,7 @@ small {
 }
 
 .action {
-    color: var(--accent-color);
+    color: var(--action-color);
 }
 
 .accent {

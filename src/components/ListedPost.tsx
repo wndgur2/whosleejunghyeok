@@ -25,7 +25,9 @@ const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProp
                 }
             </header>
             <section className="preview">
-                <Markdown>{post.content + post.code}</Markdown>
+                <Markdown options={{ overrides: { a: { component: (props: any) => <span {...props} /> } } }}>
+                    {post.content + (post.code ? post.code : "")}
+                </Markdown>
             </section>
             <ol className="tags" >
                 {

@@ -17,16 +17,18 @@ const ListedProject: FunctionComponent<ListedProjectProps> = ({ post }) => {
             to={`/post/${post.title}`}
             className="project link"
         >
-            <div className="project-image-wrapper">
-                {post.thumbnail ? parse(post.thumbnail) :
-                    <CiImageOff className="no-image" size={32} />
-                }
-            </div>
-            <div className="project-info">
-                <h2 className="project-title">{post.title}</h2>
-                <p>{post.description}</p>
-                <small className="project-date">{post.date_started}~ {post.date_finished}</small>
-            </div>
+            <section>
+                <div className="project-image-wrapper">
+                    {post.thumbnail ? parse(post.thumbnail) :
+                        <CiImageOff className="no-image" size={32} />
+                    }
+                </div>
+                <div className="project-info">
+                    <h2 className="project-title">{post.title}</h2>
+                    <p>{post.description}</p>
+                    <small className="project-date">{post.date_started}~ {post.date_finished}</small>
+                </div>
+            </section>
             <ol className="tags">
                 {post.tags.map((tag, index) => (
                     <Tag key={index} tag={tag} />

@@ -1,6 +1,13 @@
 .post-container {
-    width: 90vw;
-    margin: 5vw;
+    width: 80vw;
+    margin: 4em 10vw;
+}
+
+@media screen and (max-width: 800px) {
+    .post-container {
+        width: 88vw;
+        margin: 4em 6vw;
+    }
 }
 
 .post header {
@@ -48,7 +55,7 @@
 
 .post-content {
     border: 1px solid var(--border-color);
-    padding: 2em;
+    padding: 2em 4vw;
     background-color: var(--fg-color);
     margin-top: -1px;
     border-radius: 0em 0em 1em 1em;
@@ -69,7 +76,7 @@
 }
 
 .post-content p {
-    text-wrap: balance;
+    text-wrap: pretty;
     margin: 1em 0px;
     line-height: 1.5em;
 }
