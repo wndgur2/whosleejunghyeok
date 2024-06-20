@@ -15,7 +15,7 @@ const HomeButton: FunctionComponent = () => {
                     :
                     <Link to="/" className="home-button logo">
                         <img src="/images/profile.jpeg" alt="my face" />
-                        <p>Who's Leejunghyeok?</p>
+                        <p>HYEOK</p>
                     </Link>
             }
         </>

@@ -46,7 +46,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children
     return (
         <section className="home-category">
             <header>
-                <Link className="link" to={`search/@${category}`} state={{ search_text: '@' + category }}>
+                <Link className="link" to={`/search/@${category}`} state={{ search_text: '@' + category }}>
                     <h1>{category}</h1>
                     <IoIosArrowForward className="arrow-wrapper" size={32} />
                 </Link>
