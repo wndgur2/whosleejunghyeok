@@ -1,6 +1,6 @@
 #home {
     width: 88vw;
-    margin: 4vw 6vw;
+    margin: 0vw 6vw 6vw 6vw;
 
     display: flex;
     flex-direction: column;
@@ -18,4 +18,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.marquee-container {
+    z-index: 0;
+    position: absolute;
+    top: calc(13em + 4vw);
+    left: 0;
+    width: 100vw;
+}
+
+.in-marquee {
+    font-size: 5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.1em;
 }

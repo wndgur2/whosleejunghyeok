@@ -1,13 +1,14 @@
 import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Tag from "../../components/Tag";
-import _Post from "../../types/_Post";
+import { _Post } from "../../types/_Post";
 import { PostsContext } from "../../contexts/Posts";
 import Markdown from "markdown-to-jsx";
 import Loading from "../../components/Loading";
 import hljs from "highlight.js";
 import 'highlight.js/styles/github-dark-dimmed.css';
 import "./Post.css";
+import { IoLogoGithub } from "react-icons/io";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
@@ -31,7 +32,7 @@ const Post: FunctionComponent = () => {
             post ?
                 <div className="post">
                     <header>
-                        <section>
+                        <section className="post-title">
                             <h1>{title}</h1>
                             <ol className="tags">
                                 {
@@ -41,7 +42,7 @@ const Post: FunctionComponent = () => {
                                 }
                             </ol>
                         </section>
-                        <section>
+                        <section className="post-meta">
                             {
                                 post.github &&
                                 <Link className="link"
@@ -49,7 +50,7 @@ const Post: FunctionComponent = () => {
                                     rel="noreferrer"
                                     target="_blank"
                                 >
-                                    Github
+                                    <IoLogoGithub size={42} />
                                 </Link>
                             }
                             <small>{post.date_started} ~  {post.date_finished}</small>

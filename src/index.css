@@ -9,16 +9,18 @@
 
 :root {
     --light-fg-color: #fdfdfd;
-    --light-bg-color: #fafafa;
-    --light-hover-bg-color: #f7f7f9;
+    --light-bg-color: #eee;
+    --light-hover-bg-color: #fdfdfd;
     --light-dimmed-fg-color: #f0f0f2;
-    --light-accent-color: #39f;
-    --light-dimmed-accent-color: #39f2;
-    --light-action-color: #f0f;
+    --light-accent-color: #13f;
+    --light-dimmed-accent-color: #13f2;
+    --light-accent-content-color: #082df0cc;
     --light-content-color: #121212;
+    --light-action-color: #f0f;
     --light-minor-color: #888;
-    --light-icon-color: #39f;
-    --light-border-color: #39f;
+    --light-icon-color: #13f;
+    --light-border-color: #13f;
+    --light-light-only-border-color: #13f;
 
     --dark-fg-color: #181818;
     --dark-bg-color: #080808;
@@ -26,22 +28,26 @@
     --dark-dimmed-fg-color: #1b1b1c;
     --dark-accent-color: #64f;
     --dark-dimmed-accent-color: #64f2;
-    --dark-action-color: #aff;
+    --dark-accent-content-color: #86fc;
     --dark-content-color: #f0f0f0;
+    --dark-action-color: #aff;
     --dark-minor-color: #888;
-    --dark-icon-color: #64f;
+    --dark-icon-color: #999;
     --dark-border-color: #323232;
 
     --bg-color: var(--light-bg-color);
     --fg-color: var(--light-fg-color);
     --dimmed-fg-color: var(--light-dimmed-fg-color);
     --hover-bg-color: var(--light-hover-bg-color);
-    --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
+    --accent-color: var(--light-accent-color);
+    --dimmed-accent-color: var(--light-dimmed-accent-color);
+    --accent-content-color: var(--light-accent-content-color);
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
     --border-color: var(--light-border-color);
+    --light-only-border-color: var(--light-light-only-border-color);
 }
 
 [data-theme="light"] {
@@ -50,12 +56,14 @@
     --fg-color: var(--light-fg-color);
     --hover-bg-color: var(--light-hover-bg-color);
     --dimmed-accent-color: var(--light-dimmed-accent-color);
+    --accent-content-color: var(--light-accent-content-color);
     --accent-color: var(--light-accent-color);
     --action-color: var(--light-action-color);
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
     --border-color: var(--light-border-color);
+    --light-only-border-color: var(--light-light-only-border-color);
 }
 
 [data-theme="dark"] {
@@ -63,13 +71,15 @@
     --dimmed-fg-color: var(--dark-dimmed-fg-color);
     --fg-color: var(--dark-fg-color);
     --hover-bg-color: var(--dark-hover-bg-color);
+    --action-color: var(--dark-action-color);
     --accent-color: var(--dark-accent-color);
     --dimmed-accent-color: var(--dark-dimmed-accent-color);
-    --action-color: var(--dark-action-color);
+    --accent-content-color: var(--dark-accent-content-color);
     --content-color: var(--dark-content-color);
     --minor-color: var(--dark-minor-color);
     --icon-color: var(--dark-icon-color);
     --border-color: var(--dark-border-color);
+    --light-only-border-color: none;
 }
 
 li {
@@ -126,12 +136,6 @@ small {
 
 .accent {
     color: var(--accent-color);
-}
-
-.icon * {
-    color: var(--icon-color);
-    fill: var(--icon-color);
-    stroke: var(--icon-color);
 }
 
 button {

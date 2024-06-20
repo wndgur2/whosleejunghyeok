@@ -5,10 +5,11 @@ import HomePost from "../../components/ListedPost";
 import ListedProject from "../../components/ListedProject";
 import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
-import _Post from "../../types/_Post";
+import { _Post, _Project } from "../../types/_Post";
 import Loading from "../../components/Loading";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import _Category from "../../types/_Category";
+import Marquee from "react-fast-marquee";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
@@ -35,7 +36,7 @@ const Home: FunctionComponent = () => {
                         if (category === "project")
                             return <ListedProject
                                 key={idx}
-                                post={post}
+                                post={post as _Project}
                             />
                         return <HomePost
                             key={idx}
@@ -51,6 +52,14 @@ const Home: FunctionComponent = () => {
         <div id="home">
 
             <Profile />
+
+            <div className="marquee-container">
+                <Marquee className="marquee">
+                    <span className="in-marquee">
+                        {"who's leejunghyeok ".repeat(5)}
+                    </span>
+                </Marquee>
+            </div>
 
             <main>
                 {
