@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import _Category from "../../types/_Category";
 interface HomeCategoryProps {
     category: _Category;
-    children?: (JSX.Element | null)[];
+    children: JSX.Element[];
 }
 
 const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children }: HomeCategoryProps) => {

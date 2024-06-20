@@ -12,8 +12,8 @@
 }
 
 .listed-post:hover {
-    padding: 0.6em;
-    margin: 0.4em;
+    padding: 0.8em;
+    margin: 0.3em;
     flex-grow: 0.1;
 }
 
@@ -35,4 +35,25 @@
 
 .listed-post>header>h3>small {
     margin-left: 0.5em;
+}
+
+.preview {
+    margin: 0.4em 0;
+    padding: 0.4em;
+    height: 6em;
+    max-width: 20em;
+    overflow-y: scroll;
+
+    background-color: var(--dimmed-fg-color);
+    border-radius: 0.5em;
+}
+
+.preview * {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: var(--content-color);
+}
+
+.listed-post:hover .preview * {
+    color: var(--content-color);
 }

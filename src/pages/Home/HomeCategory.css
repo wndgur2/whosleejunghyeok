@@ -51,7 +51,7 @@
     overflow: scroll;
 }
 
-.posts>*:first-child {
+#home .posts>*:first-child {
     margin-left: 0;
 }
 

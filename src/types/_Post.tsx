@@ -16,6 +16,7 @@ interface _Algorithm extends _Post {
     number: number;
     code: string;
 }
+
 interface _Project extends _Post {
     thumbnail: string;
     description: string;

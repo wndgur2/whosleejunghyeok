@@ -32,13 +32,13 @@ const fetchPost = async (url:string) => {
     try{
         const response = await fetch("https://raw.githubusercontent.com/wndgur2/wndgur2.github.io/main/" + url);
         const data = await response.text();
-        return getPost(data, url);
+        return await getPost(data, url);
     } catch(err){
         console.log(err);
     }
 }
 
-const getPost = (data:string, url:string):_Post|null => {
+const getPost = async (data:string, url:string):Promise<_Post|null> => {
     const post:_Post = {
         id: url,
         category: CATEGORIES.OTHER,
@@ -47,6 +47,7 @@ const getPost = (data:string, url:string):_Post|null => {
         tags: [],
         date_started: "No date found.",
         github: "https://github.com/wndgur2",
+        preview: "No preview found.",
     };
     const header = data.match(/---\n(.+)\n---/s);
     if(header){
@@ -62,8 +63,9 @@ const getPost = (data:string, url:string):_Post|null => {
 
 
     const content = data.match(/---\n.+\n---\n(.+)/s);
-    if(content)
+    if(content){
         post.content = content[1].toString();
+    }
 
     post.github = "https://github.com/wndgur2/wndgur2.github.io/tree/main/" + url;
     
@@ -97,17 +99,20 @@ const getPost = (data:string, url:string):_Post|null => {
 
     const filename = code_path[code_path.length - 1].replaceAll(" ", "");
     code_path.push(filename + '.' + post.language);
-    fetch("https://raw.githubusercontent.com/wndgur2/wndgur2.github.io/main/" + code_path.join("/"))
-    .then((response) => response.text())
-    .catch((err) => {
+    
+    post.code = await getCode("https://raw.githubusercontent.com/wndgur2/wndgur2.github.io/main/" + code_path.join("/"))
+    return post;
+}
+
+const getCode = async (url:string):Promise<string> => {
+    try{
+        const response = await fetch(url);
+        const data = await response.text();
+        return data;
+    } catch(err){
         console.log(err);
         return "";
-    })
-    .then((data) => {
-        post.code = data;
-    })
-
-    return post;
+    }
 }
 
 

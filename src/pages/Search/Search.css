@@ -33,3 +33,7 @@
     display: flex;
     flex-flow: row wrap;
 }
+
+.search-result .home-category {
+    margin: 1em 0px;
+}

@@ -7,24 +7,17 @@ import useSearchPosts from "../../hooks/useSearchPosts";
 import { FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import ListedProject from "../../components/ListedProject";
 import CATEGORIES from "../../consts/CATEGORIES";
-import usePostsByCategory from "../../hooks/usePostsByCategory";
-import HomeCategory from "../Home/HomeCategory";
 import Loading from "../../components/Loading";
 
 const Search: FunctionComponent = () => {
     const params = useParams();
     const posts = useSearchPosts(params);
     const [recentFirst, setRecentFirst] = useState(true);
-    const sortedPosts = useMemo(() => {
-        return posts.sort((a, b) => {
-            if (recentFirst)
-                return a.date_started < b.date_started ? 1 : -1;
-            return a.date_started > b.date_started ? 1 : -1;
-        });
-    }, [posts, recentFirst])
-
-    const postsByCategory = usePostsByCategory(sortedPosts);
-
+    const sortedPosts = useMemo(() => [...posts.sort((a, b) => (
+        recentFirst ?
+            (a.date_started < b.date_started ? 1 : -1)
+            : (a.date_started > b.date_started ? 1 : -1))
+    )], [posts, recentFirst])
 
     return (
         <main className="search-result">
@@ -39,19 +32,16 @@ const Search: FunctionComponent = () => {
                     }
                 </button>
             </header>
-            {
-                Object.keys(postsByCategory).length ?
-                    Object.keys(postsByCategory)
-                        .map((category: any) =>
-                            <HomeCategory key={category} category={category}>{
-                                postsByCategory[category].map((post: _Post, i: number) =>
-                                    category === CATEGORIES.PROJECT ?
-                                        <ListedProject key={i} post={post as _Project} />
-                                        : <ListedPost key={i} post={post} />
-                                )}
-                            </HomeCategory>) :
-                    <Loading phrase="loading posts" />
-            }
+            <ul>
+                {
+                    sortedPosts.length ?
+                        sortedPosts.map((post: _Post, i) =>
+                            post.category === CATEGORIES.PROJECT ?
+                                <ListedProject key={i} post={post as _Project} />
+                                : <ListedPost key={i} post={post} />
+                        ) : <Loading phrase="loading posts" />
+                }
+            </ul>
         </main>
     );
 }

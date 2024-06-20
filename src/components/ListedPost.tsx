@@ -4,6 +4,7 @@ import Tag from "./Tag";
 import { Link } from "react-router-dom";
 import { _Post } from "../types/_Post";
 import CATEGORIES from "../consts/CATEGORIES";
+import Markdown from "markdown-to-jsx";
 
 interface ListedPostProps {
     post: _Post;
@@ -23,7 +24,10 @@ const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProp
                     <small>{post.date_started}</small>
                 }
             </header>
-            < ol className="tags" >
+            <section className="preview">
+                <Markdown>{post.content + post.code}</Markdown>
+            </section>
+            <ol className="tags" >
                 {
                     post.tags.map((tag, index) => (
                         <Tag key={index} tag={tag} />
