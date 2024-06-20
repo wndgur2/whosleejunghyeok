@@ -1,7 +1,7 @@
 .listed-post {
     height: fit-content;
     margin: 0.5em;
-    padding: 1em 0.6em;
+    padding: 0.6em;
 
     border: 1px solid var(--border-color);
     border-radius: 1em;
@@ -11,8 +11,8 @@
 }
 
 .listed-post:hover {
-    padding: 1.4em 1em;
-    margin: 0.1em;
+    padding: 0.9em 0.9em;
+    margin: 0.2em;
 }
 
 .listed-post>header {
@@ -36,15 +36,10 @@
 }
 
 .preview {
-    margin: 0.2em 0 1em 0;
     padding: 0.5em;
     height: 8em;
-    max-width: 17em;
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    background-color: var(--dimmed-fg-color);
-    border-radius: 0.5em;
+    max-width: 20em;
+    overflow: hidden;
 }
 
 .preview * {

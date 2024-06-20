@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import "./Profile.css";
 import Tag from "../Tag";
 import ProfileImage from "./ProfileImage";
+import Marquee from "react-fast-marquee";
 
 const Profile: FunctionComponent = () => {
     const stacks = ["HTML", "CSS", "Typescript", "Javascript", "ReactJs", "NextJs", "Express"];
@@ -20,6 +21,14 @@ const Profile: FunctionComponent = () => {
                         <Tag key={index} tag={stack} />
                     ))}
                 </div>
+            </div>
+
+            <div className="marquee-container">
+                <Marquee className="marquee">
+                    <span className="in-marquee">
+                        {"who's leejunghyeok ".repeat(5)}
+                    </span>
+                </Marquee>
             </div>
         </div>
     );

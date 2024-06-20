@@ -3,7 +3,7 @@
 
     margin: 0px;
     margin-top: calc(2em + 2%);
-    margin-bottom: 1.4em;
+    margin-bottom: 1.8em;
 
     transition: flex-grow 0.2s;
 }
@@ -15,7 +15,6 @@
     justify-content: space-between;
     margin-bottom: 0.4em;
     padding-bottom: 0.2em;
-
 }
 
 .home-category>header>.link {
@@ -37,7 +36,7 @@
 }
 
 .home-category>header h1 {
-    font-size: xx-large;
+    font-size: x-large;
     color: var(--accent-color);
 }
 

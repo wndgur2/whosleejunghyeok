@@ -8,19 +8,20 @@
 }
 
 :root {
-    --light-fg-color: #fdfdfd;
+    --light-fg-color: #fafafa;
     --light-bg-color: #eee;
     --light-hover-bg-color: #fff8;
     --light-dimmed-fg-color: #f0f0f0;
     --light-accent-color: #13f;
     --light-dimmed-accent-color: #13f2;
     --light-accent-content-color: #082df0cc;
-    --light-content-color: #121212;
+    --light-content-color: #242424;
     --light-action-color: #f4a;
     --light-minor-color: #888;
-    --light-icon-color: #13f;
+    --light-icon-color: #444;
+    --light-dimmed-icon-color: #4442;
     --light-border-color: #13f;
-    --light-light-only-border-color: #13f;
+    --light-light-only-border-color: #f4a;
 
     --dark-fg-color: #181818;
     --dark-bg-color: #080808;
@@ -29,10 +30,11 @@
     --dark-accent-color: #64f;
     --dark-dimmed-accent-color: #64f2;
     --dark-accent-content-color: #86fc;
-    --dark-content-color: #f0f0f0;
+    --dark-content-color: #eaeaea;
     --dark-action-color: #aff;
     --dark-minor-color: #888;
-    --dark-icon-color: #999;
+    --dark-icon-color: #ddd;
+    --dark-dimmed-icon-color: #ddd2;
     --dark-border-color: #323232;
 
     --bg-color: var(--light-bg-color);
@@ -46,6 +48,7 @@
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
+    --dimmed-icon-color: var(--light-dimmed-icon-color);
     --border-color: var(--light-border-color);
     --light-only-border-color: var(--light-light-only-border-color);
 }
@@ -62,6 +65,7 @@
     --content-color: var(--light-content-color);
     --minor-color: var(--light-minor-color);
     --icon-color: var(--light-icon-color);
+    --dimmed-icon-color: var(--light-dimmed-icon-color);
     --border-color: var(--light-border-color);
     --light-only-border-color: var(--light-light-only-border-color);
 }
@@ -78,6 +82,7 @@
     --content-color: var(--dark-content-color);
     --minor-color: var(--dark-minor-color);
     --icon-color: var(--dark-icon-color);
+    --dimmed-icon-color: var(--dark-dimmed-icon-color);
     --border-color: var(--dark-border-color);
     --light-only-border-color: none;
 }
@@ -139,7 +144,7 @@ small {
 }
 
 button {
-    padding: 0.3em;
+    padding: 0.5em;
 
     display: flex;
     font-size: 1.3em;
@@ -151,12 +156,22 @@ button {
     cursor: pointer;
 }
 
-button * {
+button:hover * {
+    color: var(--icon-color);
+    fill: var(--icon-color);
+    stroke: var(--icon-color);
+}
+
+button:hover {
+    background-color: var(--dimmed-icon-color);
+}
+
+button.accent * {
     color: var(--accent-color);
     fill: var(--accent-color);
     stroke: var(--accent-color);
 }
 
-button:hover {
+button.accent:hover {
     background-color: var(--dimmed-accent-color);
 }

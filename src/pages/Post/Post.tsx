@@ -31,7 +31,7 @@ const Post: FunctionComponent = () => {
     }, [posts, title]);
 
     return (
-        <div className="post-container">{
+        <>{
             post ?
                 <div className="post">
                     <header>
@@ -70,7 +70,7 @@ const Post: FunctionComponent = () => {
                     </main>
                 </div> :
                 <Loading phrase="Loading post" />
-        }</div>
+        }</>
     );
 }
 

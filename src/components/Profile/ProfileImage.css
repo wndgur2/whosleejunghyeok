@@ -1,6 +1,7 @@
 .profile-img-wrapper {
     width: calc(10em + 6vw);
     padding: 0;
+    margin-top: 1em;
 
     display: flex;
     justify-content: center;
@@ -9,13 +10,14 @@
 
     border-radius: 50%;
     border: 0.4em solid var(--accent-color);
-    transition: width 0.5s, border 0.5s;
+    transition: width 0.3s, border 0.3s, margin 0.3s;
 }
 
 .profile-img-wrapper:hover {
     width: calc(11em + 7vw);
     cursor: pointer;
-    border: 0.8em solid var(--accent-color);
+    border: 0.8em solid var(--action-color);
+    margin-top: 0;
 }
 
 .hidden {

@@ -23,7 +23,7 @@ const Search: FunctionComponent = () => {
         <main className="search-result">
             <header>
                 <h2>Search Result for {params.search_text}</h2>
-                <button className="search-options" onClick={() => {
+                <button className="search-options accent" onClick={() => {
                     setRecentFirst(!recentFirst);
                 }}>
                     {recentFirst ?

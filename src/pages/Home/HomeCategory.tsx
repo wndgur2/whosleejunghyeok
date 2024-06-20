@@ -50,7 +50,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children
                     <h1>{category[0].toLocaleUpperCase() + category.slice(1,)}</h1>
                     <IoIosArrowForward className="arrow-wrapper" size={32} />
                 </Link>
-                <div className="scroll-buttons" ref={buttonsRef}>
+                <div className="scroll-buttons icon" ref={buttonsRef}>
                     <button onClick={() => scrollPosts("backward")}><RiArrowLeftSLine style={{ marginLeft: "-2px" }} className="icon" size={28} /></button>
                     <button onClick={() => scrollPosts("forward")}><RiArrowRightSLine style={{ marginRight: "-2px" }} className="icon" size={28} /></button>
                 </div>

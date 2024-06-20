@@ -5,7 +5,6 @@ import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
 import { _Post, _Project } from "../../types/_Post";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import Marquee from "react-fast-marquee";
 import ListedPost from "../../components/ListedPost";
 import Loading from "../../components/Loading";
 import ListedProject from "../../components/ListedProject";
@@ -28,14 +27,6 @@ const Home: FunctionComponent = () => {
         <div id="home">
 
             <Profile />
-
-            <div className="marquee-container">
-                <Marquee className="marquee">
-                    <span className="in-marquee">
-                        {"who's leejunghyeok ".repeat(5)}
-                    </span>
-                </Marquee>
-            </div>
 
             <main>
                 {

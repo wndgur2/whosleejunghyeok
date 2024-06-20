@@ -1,38 +1,13 @@
 #home {
-    width: 92vw;
-    margin: 0vw 4vw 6vw 4vw;
-    padding: 2vw;
-
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
 }
 
-@media screen and (max-width: 768px) {
-    #home {
-        width: 100vw;
-        margin: 0vw 0vw 6vw 0vw;
-    }
-}
 
 #home main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.marquee-container {
-    z-index: 0;
-    position: absolute;
-    top: calc(13em + 4vw);
-    left: 0;
-    width: 100vw;
-}
-
-.in-marquee {
-    font-size: 5em;
-    font-weight: 700;
-    color: var(--accent-color);
-    letter-spacing: 0.1em;
 }

@@ -5,7 +5,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin: calc(5em + 1vw) 0 calc(9em - 6vw) 0;
+    margin: calc(4em + 1vw) 0 calc(9em - 6vw) 0;
     width: 100%;
 
     color: var(--content-color);
@@ -39,10 +39,31 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: 2em;
     font-size: 1.1em;
 }
 
 .profile-description {
     color: var(--accent-content-color);
+}
+
+.marquee-container {
+    z-index: -1;
+    position: absolute;
+    top: calc(13em + 5vw);
+    left: 0;
+    width: 100vw;
+}
+
+.in-marquee {
+    font-size: 5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.1em;
+
+    transition: color 0.3s;
+}
+
+.profile-img-wrapper:hover~.marquee-container .in-marquee {
+    color: var(--action-color);
 }

@@ -1,11 +1,10 @@
 .project {
     min-width: fit-content;
-    margin: 0.5em 1em;
+    margin: 0.5em;
     padding: 0;
 
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
 
     border-radius: 1em;
 
@@ -13,8 +12,19 @@
 }
 
 .project:hover {
-    padding: 0.2em;
-    margin: 0.1em 0.6em;
+    padding: 0.3em;
+    margin: 0.2em;
+}
+
+ul .project {
+    border: 1px solid var(--border-color);
+    padding: 0.5em;
+    background-color: var(--fg-color);
+}
+
+ul .project:hover {
+    border: 1px solid var(--border-color);
+    padding: 0.8em;
 }
 
 
@@ -35,6 +45,7 @@
     height: 14em;
     width: max-content;
     min-width: 100%;
+    max-width: 80vw;
 
     display: flex;
     justify-content: center;
