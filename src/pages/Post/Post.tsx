@@ -10,6 +10,7 @@ import 'highlight.js/styles/github-dark-dimmed.css';
 import "./Post.css";
 import { IoLogoGithub } from "react-icons/io";
 import useResetScroll from "../../hooks/useResetScroll";
+import CATEGORIES from "../../consts/CATEGORIES";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
@@ -62,7 +63,7 @@ const Post: FunctionComponent = () => {
                         <Markdown options={{ wrapper: 'div', }}>
                             {
                                 post.content +
-                                (post.category === "ALGORITHM" ?
+                                (post.category === CATEGORIES.ALGORITHM ?
                                     "\n\n```" + post.language + "\n\n" + post.code + "```" : "")
                             }
                         </Markdown>

@@ -1,3 +1,4 @@
+import CATEGORIES from "../consts/CATEGORIES";
 import {_Post} from "../types/_Post";
 import fetchPostUrls from "./fetchPostsUrls";
 
@@ -40,7 +41,7 @@ const fetchPost = async (url:string) => {
 const getPost = (data:string, url:string):_Post|null => {
     const post:_Post = {
         id: url,
-        category: "OTHER",
+        category: CATEGORIES.OTHER,
         title: "No title found.",
         content: "No content found.",
         tags: [],
@@ -66,7 +67,7 @@ const getPost = (data:string, url:string):_Post|null => {
 
     post.github = "https://github.com/wndgur2/wndgur2.github.io/tree/main/" + url;
     
-    if(post.category !== "ALGORITHM") return post;
+    if(post.category !== CATEGORIES.ALGORITHM) return post;
     
 
     const code_path = url.split("/");

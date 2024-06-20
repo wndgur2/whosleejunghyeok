@@ -6,6 +6,10 @@ import ListedPost from "../../components/ListedPost";
 import useSearchPosts from "../../hooks/useSearchPosts";
 import { FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import ListedProject from "../../components/ListedProject";
+import CATEGORIES from "../../consts/CATEGORIES";
+import usePostsByCategory from "../../hooks/usePostsByCategory";
+import HomeCategory from "../Home/HomeCategory";
+import Loading from "../../components/Loading";
 
 const Search: FunctionComponent = () => {
     const params = useParams();
@@ -18,6 +22,8 @@ const Search: FunctionComponent = () => {
             return a.date_started > b.date_started ? 1 : -1;
         });
     }, [posts, recentFirst])
+
+    const postsByCategory = usePostsByCategory(sortedPosts);
 
 
     return (
@@ -33,13 +39,19 @@ const Search: FunctionComponent = () => {
                     }
                 </button>
             </header>
-            <ul>
-                {sortedPosts.map((post: _Post, index) => (
-                    post.category === 'PROJECT' ?
-                        <ListedProject post={post as _Project} key={index} /> :
-                        <ListedPost post={post} key={index} />
-                ))}
-            </ul>
+            {
+                Object.keys(postsByCategory).length ?
+                    Object.keys(postsByCategory)
+                        .map((category: any) =>
+                            <HomeCategory key={category} category={category}>{
+                                postsByCategory[category].map((post: _Post, i: number) =>
+                                    category === CATEGORIES.PROJECT ?
+                                        <ListedProject key={i} post={post as _Project} />
+                                        : <ListedPost key={i} post={post} />
+                                )}
+                            </HomeCategory>) :
+                    <Loading phrase="loading posts" />
+            }
         </main>
     );
 }

@@ -3,6 +3,7 @@ import './ListedPost.css';
 import Tag from "./Tag";
 import { Link } from "react-router-dom";
 import { _Post } from "../types/_Post";
+import CATEGORIES from "../consts/CATEGORIES";
 
 interface ListedPostProps {
     post: _Post;
@@ -17,7 +18,7 @@ const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProp
                     {post.site && <small>{post.site}</small>}
                     {post.number && <small>{post.number}</small>}
                 </h3>
-                {post.category === "PROJECT" ?
+                {post.category === CATEGORIES.PROJECT ?
                     <small>{post.date_started}~ {post.date_finished}</small> :
                     <small>{post.date_started}</small>
                 }

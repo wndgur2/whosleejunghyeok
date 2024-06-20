@@ -1,31 +1,75 @@
 .home-button {
     order: 0;
     height: 2.8em;
-    width: 2.8em;
-    aspect-ratio: 1/1;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border: 1px solid var(--border-color);
-    border-radius: 50%;
-    background-color: var(--fg-color);
+    border-radius: 2em;
     overflow: hidden;
 
-    transition: width 0.2s, height 0.2s;
+    transition: width 0.2s, height 0.2s, padding 0.2s;
 }
 
 .home-button:hover {
     height: 3.2em;
-    width: 3.2em;
 }
 
 .home-button path {
-    fill: var(--accent-color);
+    fill: var(--content-color);
 }
 
-.home-button img {
+.github {
+    aspect-ratio: 1/1;
+}
+
+.logo {
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+.logo img {
+    height: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
+}
+
+.logo:hover {
+    padding: 0.4em 0.6em;
+    background-color: var(--bg-color);
+}
+
+.logo p {
+    font-weight: 700;
+    color: var(--accent-color);
+
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+.logo:hover p {
+    color: var(--action-color);
+}
+
+@media screen and (max-width: 768px) {
+    .logo p {
+        display: none;
+    }
+
+    .home-button {
+        height: 3em;
+    }
+
+    .logo {
+        aspect-ratio: 1/1;
+        padding: 0.3em;
+    }
+
+    .logo:hover {
+        background-color: var(--accent-color);
+        padding: 0.5em;
+    }
+
 }

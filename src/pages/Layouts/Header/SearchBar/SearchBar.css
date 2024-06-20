@@ -38,7 +38,7 @@
 .search-bar input {
     width: 96%;
 
-    font-size: large;
+    font-size: medium;
     color: var(--content-color);
 
     border: none;

@@ -10,6 +10,7 @@ import ListedPost from "../../components/ListedPost";
 import Loading from "../../components/Loading";
 import ListedProject from "../../components/ListedProject";
 import usePostsByCategory from "../../hooks/usePostsByCategory";
+import CATEGORIES from "../../consts/CATEGORIES";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
@@ -38,9 +39,9 @@ const Home: FunctionComponent = () => {
 
             <main>
                 {
-                    postsByCategory["project"] &&
-                    <HomeCategory category="PROJECT">{
-                        postsByCategory["project"].map((project: _Project, i: number) =>
+                    postsByCategory[CATEGORIES.PROJECT] &&
+                    <HomeCategory category={CATEGORIES.PROJECT}>{
+                        postsByCategory[CATEGORIES.PROJECT].map((project: _Project, i: number) =>
                             <ListedProject key={i} post={project} />
                         )}
                     </HomeCategory>
@@ -48,7 +49,7 @@ const Home: FunctionComponent = () => {
                 {
                     Object.keys(postsByCategory).length ?
                         Object.keys(postsByCategory)
-                            .filter((key) => key !== "project")
+                            .filter((key) => key !== CATEGORIES.PROJECT)
                             .map((category: any) =>
                                 <HomeCategory key={category} category={category}>
                                     {
