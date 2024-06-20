@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import usePosts from "./hooks/usePosts";
 import { PostsContext } from "./contexts/Posts";
 import { DeviceContext } from "./contexts/Device";
@@ -20,6 +20,15 @@ export default function App() {
     window.addEventListener('resize', () => {
         setInnerWidth(window.innerWidth);
     });
+
+    useEffect(() => {
+        const link = document.querySelector('link[rel="icon"]');
+        if (!link) return;
+
+        isDark ?
+            link.setAttribute('href', '/favicon-dark.ico') :
+            link.setAttribute('href', '/favicon-light.ico');
+    }, [isDark]);
 
     return (
         <BrowserRouter>
