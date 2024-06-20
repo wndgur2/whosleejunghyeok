@@ -69,12 +69,18 @@
 }
 
 .post-content p {
-    margin: 0.5em 0px;
+    text-wrap: balance;
+    margin: 1em 0px;
+    line-height: 1.5em;
 }
 
 .post-content ul {
-    margin: 0.5em 0px 1em 0px;
+    margin: 0.5em 0px 2em 0px;
     padding-left: 1em;
+}
+
+.post-content li {
+    line-height: 1.5em;
 }
 
 .post-content li::marker {
@@ -115,6 +121,12 @@
 
 .post-content code {
     border-radius: 0.5em;
+}
+
+.post-content blockquote {
+    border-left: 0.2em solid var(--accent-color);
+    padding: 0.1em 1em;
+    margin: 1em 0px;
 }
 
 .hljs-params {

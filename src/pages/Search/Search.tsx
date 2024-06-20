@@ -1,10 +1,11 @@
 import { FunctionComponent, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import './Search.css';
-import { _Post } from "../../types/_Post";
+import { _Post, _Project } from "../../types/_Post";
 import ListedPost from "../../components/ListedPost";
 import useSearchPosts from "../../hooks/useSearchPosts";
 import { FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
+import ListedProject from "../../components/ListedProject";
 
 const Search: FunctionComponent = () => {
     const params = useParams();
@@ -34,7 +35,9 @@ const Search: FunctionComponent = () => {
             </header>
             <ul>
                 {sortedPosts.map((post: _Post, index) => (
-                    <ListedPost post={post} key={index} />
+                    post.category === 'PROJECT' ?
+                        <ListedProject post={post as _Project} key={index} /> :
+                        <ListedPost post={post} key={index} />
                 ))}
             </ul>
         </main>

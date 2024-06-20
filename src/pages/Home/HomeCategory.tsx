@@ -10,20 +10,6 @@ interface HomeCategoryProps {
 }
 
 const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children }: HomeCategoryProps) => {
-    const plural = (category: _Category): string => {
-        switch (category) {
-            case 'project':
-                return 'Projects';
-            case 'algorithm':
-                return 'Algorithms';
-            case 'life':
-                return 'Life';
-            case 'study':
-                return 'Study';
-            case 'other':
-                return 'Others';
-        }
-    }
     const postsRef = useRef<HTMLUListElement>(null);
     const buttonsRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +47,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children
         <section className="home-category">
             <header>
                 <Link className="link" to={`search/@${category}`} state={{ search_text: '@' + category }}>
-                    <h1>{plural(category)}</h1>
+                    <h1>{category}</h1>
                     <IoIosArrowForward className="arrow-wrapper" size={32} />
                 </Link>
                 <div className="scroll-buttons" ref={buttonsRef}>

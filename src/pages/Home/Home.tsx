@@ -1,19 +1,19 @@
 import { FunctionComponent, useContext, useEffect } from "react";
 import './Home.css';
 import HomeCategory from "./HomeCategory";
-import HomePost from "../../components/ListedPost";
-import ListedProject from "../../components/ListedProject";
 import Profile from "../../components/Profile/Profile";
 import { PostsContext } from "../../contexts/Posts";
 import { _Post, _Project } from "../../types/_Post";
-import Loading from "../../components/Loading";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import _Category from "../../types/_Category";
 import Marquee from "react-fast-marquee";
+import ListedPost from "../../components/ListedPost";
+import Loading from "../../components/Loading";
+import ListedProject from "../../components/ListedProject";
+import usePostsByCategory from "../../hooks/usePostsByCategory";
 
 const Home: FunctionComponent = () => {
     const posts = useContext(PostsContext).posts as _Post[];
-    const categories: _Category[] = ["project", "study", "algorithm", "life"];
+    const postsByCategory = usePostsByCategory(posts);
 
     const router = useNavigate();
     const searchParams = useSearchParams()[0];
@@ -22,31 +22,6 @@ const Home: FunctionComponent = () => {
     useEffect(() => {
         if (lost_url) router(lost_url);
     }, [lost_url, router]);
-
-    const renderCategory = (category: _Category) => {
-        let count = 0;
-        return (
-            <HomeCategory key={category} category={category}>
-                {
-                    posts.map((post: _Post, idx) => {
-                        if (post.category.toLowerCase() !== category.toLowerCase() || count >= 5)
-                            return null;
-                        count += 1;
-
-                        if (category === "project")
-                            return <ListedProject
-                                key={idx}
-                                post={post as _Project}
-                            />
-                        return <HomePost
-                            key={idx}
-                            post={post}
-                        />
-                    }).filter(post => post !== null)
-                }
-            </HomeCategory>
-        );
-    }
 
     return (
         <div id="home">
@@ -63,9 +38,26 @@ const Home: FunctionComponent = () => {
 
             <main>
                 {
-                    posts.length ?
-                        categories.map(renderCategory) :
-                        <Loading phrase="Fetching data" />
+                    postsByCategory["project"] &&
+                    <HomeCategory category="PROJECT">{
+                        postsByCategory["project"].map((project: _Project, i: number) =>
+                            <ListedProject key={i} post={project} />
+                        )}
+                    </HomeCategory>
+                }
+                {
+                    Object.keys(postsByCategory).length ?
+                        Object.keys(postsByCategory)
+                            .filter((key) => key !== "project")
+                            .map((category: any) =>
+                                <HomeCategory key={category} category={category}>
+                                    {
+                                        postsByCategory[category].map((post: _Post, i: number) => {
+                                            return <ListedPost key={i} post={post} />
+                                        })
+                                    }
+                                </HomeCategory>) :
+                        <Loading phrase="loading posts" />
                 }
             </main>
         </div>

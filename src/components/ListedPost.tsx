@@ -17,7 +17,7 @@ const ListedPost: FunctionComponent<ListedPostProps> = ({ post }: ListedPostProp
                     {post.site && <small>{post.site}</small>}
                     {post.number && <small>{post.number}</small>}
                 </h3>
-                {post.category === "project" ?
+                {post.category === "PROJECT" ?
                     <small>{post.date_started}~ {post.date_finished}</small> :
                     <small>{post.date_started}</small>
                 }

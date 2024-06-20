@@ -13,7 +13,6 @@ const Tag: FunctionComponent<TagProps> = ({ tag }) => {
     useEffect(() => {
         if (!location.state) return;
         if (!tagRef.current) return;
-        console.log(location.state.search_text.replace("#", "").split(" "));
         if (location.state.search_text.replaceAll("#", "").split(" ").includes(tag))
             tagRef.current.classList.add("tag-active");
         else

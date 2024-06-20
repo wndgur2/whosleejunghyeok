@@ -9,11 +9,13 @@ import hljs from "highlight.js";
 import 'highlight.js/styles/github-dark-dimmed.css';
 import "./Post.css";
 import { IoLogoGithub } from "react-icons/io";
+import useResetScroll from "../../hooks/useResetScroll";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
     const title = useParams().post_title;
     const [post, setPost] = useState<_Post>();
+    useResetScroll();
 
     useEffect(() => {
         const nodes = document.querySelectorAll('pre code');
@@ -60,7 +62,7 @@ const Post: FunctionComponent = () => {
                         <Markdown options={{ wrapper: 'div', }}>
                             {
                                 post.content +
-                                (post.category === "algorithm" ?
+                                (post.category === "ALGORITHM" ?
                                     "\n\n```" + post.language + "\n\n" + post.code + "```" : "")
                             }
                         </Markdown>
