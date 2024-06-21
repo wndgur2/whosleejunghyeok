@@ -6,6 +6,7 @@ const usePostsByCategory = (posts: _Post[]) => {
         const _postsByCategory: any = {};
         posts.forEach(post => {
             if (!_postsByCategory[post.category]) _postsByCategory[post.category] = [];
+            else if (_postsByCategory[post.category].length > 10) return;
             _postsByCategory[post.category].push(post);
         });
         return _postsByCategory;
