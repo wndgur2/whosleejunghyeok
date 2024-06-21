@@ -48,7 +48,7 @@ const HomeCategory: FunctionComponent<HomeCategoryProps> = ({ category, children
             <header>
                 <Link className="link" to={`/search/@${category}`} state={{ search_text: '@' + category }}>
                     <h1>{category[0].toLocaleUpperCase() + category.slice(1,)}</h1>
-                    <IoIosArrowForward className="arrow-wrapper" size={32} />
+                    <IoIosArrowForward className="arrow-wrapper" size={24} />
                 </Link>
                 <div className="scroll-buttons icon" ref={buttonsRef}>
                     <button onClick={() => scrollPosts("backward")}><RiArrowLeftSLine style={{ marginLeft: "-2px" }} className="icon" size={28} /></button>
