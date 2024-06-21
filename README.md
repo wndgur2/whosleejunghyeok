@@ -21,6 +21,9 @@
     - ReactJs로 SPA 구현 -> routing 속도 개선 ✅  
     - Light/Dark theme 제공 ✅  
     - Data Fetch 비동기 처리 ✅  
+    - Performance  
+        - Binary Search로 log(N)에 posts 날짜 내림차순 삽입 연산 ✅  
+        - useCallback() hook으로 리랜더링 시 중복 선언 방지 ✅  
 
 - 기능  
     - 검색
