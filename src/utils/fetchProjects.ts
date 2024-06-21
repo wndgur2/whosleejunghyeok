@@ -22,11 +22,7 @@ const fetchProjects = async (dispatch:React.Dispatch<PostsAction>) =>{
             img.src = "/images/" + post.title.toLowerCase() + ".jpeg";
             
             post.thumbnail = '<img src="' + img.src + '" alt="' + post.title + '" />';
-            // // getting first image from content.
-            //     const img = post.content.match(/<img[^>]+src="([^">]+)".*>/);
-            // if(img){
-            //     post.thumbnail = '<img src="' + img[1] + '" alt="' + post.title + '" />';
-            // }
+            
             dispatch({type: "INSERT_POST", payload: post});
         })
     });
