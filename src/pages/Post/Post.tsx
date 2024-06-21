@@ -46,16 +46,13 @@ const Post: FunctionComponent = () => {
                             </ol>
                         </section>
                         <section className="post-meta">
-                            {
-                                post.github &&
-                                <Link className="link"
-                                    to={post.github}
-                                    rel="noreferrer"
-                                    target="_blank"
-                                >
-                                    <IoLogoGithub size={42} />
-                                </Link>
-                            }
+                            <Link className="link github"
+                                to={post.github}
+                                rel="noreferrer"
+                                target="_blank"
+                            >
+                                <IoLogoGithub size={42} />
+                            </Link>
                             <small>{post.date_started} ~  {post.date_finished}</small>
                         </section>
                     </header>

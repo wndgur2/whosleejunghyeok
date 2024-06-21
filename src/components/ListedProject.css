@@ -27,11 +27,6 @@ ul .project:hover {
     padding: 0.8em;
 }
 
-
-.project:first-child {
-    margin-left: 0;
-}
-
 .project p {
     width: 100%;
     word-wrap: break-word;

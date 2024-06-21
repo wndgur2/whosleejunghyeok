@@ -26,7 +26,7 @@ const Profile: FunctionComponent = () => {
             <div className="marquee-container">
                 <Marquee className="marquee">
                     <span className="in-marquee">
-                        {"who's leejunghyeok ".repeat(5)}
+                        {"whosleejunghyeok".repeat(5)}
                     </span>
                 </Marquee>
             </div>

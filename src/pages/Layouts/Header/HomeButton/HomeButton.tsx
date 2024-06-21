@@ -9,13 +9,12 @@ const HomeButton: FunctionComponent = () => {
         <>
             {
                 location.pathname === "/" ?
-                    <Link to="https://github.com/wndgur2" className="home-button github" rel="noreferrer" target="_blank">
+                    <Link to="https://github.com/wndgur2" className="home-button" rel="noreferrer" target="_blank">
                         <IoLogoGithub size={42} />
                     </Link>
                     :
-                    <Link to="/" className="home-button logo">
-                        <img src="/images/profile.jpeg" alt="my face" />
-                        <p>HYEOK</p>
+                    <Link to="/" className="home-button">
+                        <img src="/images/profile.jpeg" alt="my face" width={"40px"} />
                     </Link>
             }
         </>

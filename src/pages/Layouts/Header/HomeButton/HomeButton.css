@@ -10,6 +10,7 @@
     border: 1px solid var(--border-color);
     border-radius: 2em;
     overflow: hidden;
+    aspect-ratio: 1/1;
 
     transition: width 0.2s, height 0.2s, padding 0.2s;
 }
@@ -22,49 +23,14 @@
     fill: var(--accent-color);
 }
 
-.github {
-    aspect-ratio: 1/1;
-}
-
-.logo {
-    gap: 0.3em;
-    padding: 0.2em 0.5em;
-}
-
-.logo img {
-    height: 80%;
-    aspect-ratio: 1;
+.home-button img {
+    object-fit: cover;
     border-radius: 50%;
 }
 
-.logo:hover {
-    padding: 0.3em 0.5em;
-}
-
-.logo p {
-    font-weight: 700;
-    font-size: 1em;
-    color: var(--accent-color);
-
-    text-wrap: nowrap;
-    overflow: hidden;
-}
-
-.logo:hover p {
-    color: var(--action-color);
-}
-
 @media screen and (max-width: 768px) {
-    .logo p {
-        display: none;
-    }
-
     .home-button {
         height: 3em;
-    }
-
-    .logo {
-        aspect-ratio: 1/1;
     }
 
     .home-button:hover {

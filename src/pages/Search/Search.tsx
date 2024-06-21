@@ -39,7 +39,7 @@ const Search: FunctionComponent = () => {
                             post.category === CATEGORIES.PROJECT ?
                                 <ListedProject key={i} post={post as _Project} />
                                 : <ListedPost key={i} post={post} />
-                        ) : <Loading phrase="loading posts" />
+                        ) : <span>No post.</span>
                 }
             </ul>
         </main>
