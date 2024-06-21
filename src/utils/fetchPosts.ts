@@ -1,8 +1,9 @@
 import CATEGORIES from "../consts/CATEGORIES";
+import PostsAction from "../types/PostsAction";
 import {_Post} from "../types/_Post";
 import fetchPostUrls from "./fetchPostsUrls";
 
-const fetchPosts = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>
+const fetchPosts = async (dispatch:React.Dispatch<PostsAction>
 ):Promise<void> => {
     let urls = await fetchPostUrls();
 
@@ -15,14 +16,7 @@ const fetchPosts = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>
         await fetchPost(url)
         .then((post) => {
             if(!post) return;
-            setPosts((prevPosts:_Post[]):_Post[] => {
-                if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
-                return [...prevPosts, post].sort((a:_Post, b:_Post) => {
-                    if(a.date_started > b.date_started) return -1;
-                    if(a.date_started < b.date_started) return 1;
-                    return 0;
-                });
-            });
+            dispatch({type: "INSERT_POST", payload: post});
         })
         .catch((err) => console.log(err));
     });

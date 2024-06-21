@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { _Post } from "../types/_Post";
+import { useEffect, useReducer } from "react";
 import fetchPosts from "../utils/fetchPosts";
 import fetchProjects from "../utils/fetchProjects";
+import postsReducer from "../utils/postsReducer";
 
 function usePosts() {
-    const [posts, setPosts] = useState<_Post[]>([]);
+    const [posts, dispatch] = useReducer(postsReducer, []);
 
     useEffect(() => {
-        fetchPosts(setPosts);
-        fetchProjects(setPosts);
+        fetchPosts(dispatch);
+        fetchProjects(dispatch);
     }, []);
 
     return posts;

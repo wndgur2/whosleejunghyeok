@@ -1,7 +1,8 @@
+import PostsAction from "../types/PostsAction";
 import {_Post} from "../types/_Post";
 import fetchRawData from "./fetchRawData";
 
-const fetchProjects = async (setPosts:React.Dispatch<React.SetStateAction<_Post[]>>) =>{
+const fetchProjects = async (dispatch:React.Dispatch<PostsAction>) =>{
     let response = await fetch('/metadata.json');
     const data = await response.json();
 
@@ -26,14 +27,7 @@ const fetchProjects = async (setPosts:React.Dispatch<React.SetStateAction<_Post[
             // if(img){
             //     post.thumbnail = '<img src="' + img[1] + '" alt="' + post.title + '" />';
             // }
-            setPosts((prevPosts:_Post[]):_Post[] => {
-                if(prevPosts.find((prevPost:_Post) => prevPost.id === post.id)) return prevPosts;
-                return [...prevPosts, post].sort((a:_Post, b:_Post) => {
-                    if(a.date_started > b.date_started) return -1;
-                    if(a.date_started < b.date_started) return 1;
-                    return 0;
-                });
-            });
+            dispatch({type: "INSERT_POST", payload: post});
         })
     });
 

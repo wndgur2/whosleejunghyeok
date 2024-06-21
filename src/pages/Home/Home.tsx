@@ -25,7 +25,6 @@ const Home: FunctionComponent = () => {
 
     return (
         <div id="home">
-
             <Profile />
 
             <main>
