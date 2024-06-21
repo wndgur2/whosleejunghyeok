@@ -20,7 +20,7 @@ const Home: FunctionComponent = () => {
     const lost_url = searchParams.get("lost_url");
 
     useEffect(() => {
-        if (lost_url) router(lost_url);
+        if (lost_url) router(encodeURI(lost_url));
     }, [lost_url, router]);
 
     return (
