@@ -11,6 +11,7 @@ import "./Post.css";
 import { IoLogoGithub } from "react-icons/io";
 import useResetScroll from "../../hooks/useResetScroll";
 import CATEGORIES from "../../consts/CATEGORIES";
+import ImageSkeleton from "../../components/ImageSkeleton";
 
 const Post: FunctionComponent = () => {
     const posts: _Post[] = useContext(PostsContext).posts;
@@ -57,7 +58,14 @@ const Post: FunctionComponent = () => {
                         </section>
                     </header>
                     <main className="post-content">
-                        <Markdown options={{ wrapper: 'div', }}>
+                        <Markdown options={{
+                            wrapper: 'div',
+                            overrides: {
+                                img: {
+                                    component: (props: any) => <ImageSkeleton props={props} />
+                                }
+                            }
+                        }}>
                             {
                                 post.content +
                                 (post.category === CATEGORIES.ALGORITHM ?
@@ -65,7 +73,7 @@ const Post: FunctionComponent = () => {
                             }
                         </Markdown>
                     </main>
-                </div> :
+                </div > :
                 <Loading phrase="Loading post" />
         }</>
     );
