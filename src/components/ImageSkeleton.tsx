@@ -18,8 +18,7 @@ const ImageSkeleton: FunctionComponent<ImageSkeletonProps> = ({ img, props }) =>
             if (!skeletonRef.current) return;
             skeletonRef.current.style.display = 'none';
             if (!imgRef.current) return;
-            imgRef.current.style.display = 'block';
-            imgRef.current.style.opacity = '1';
+            imgRef.current.classList.replace('loading', 'loaded');
         };
 
     }, [props.src]);
@@ -27,7 +26,7 @@ const ImageSkeleton: FunctionComponent<ImageSkeletonProps> = ({ img, props }) =>
     return (
         <>
             <div className="image-skeleton" ref={skeletonRef} />
-            <div className="img-wrapper" ref={imgRef}>
+            <div className="img-wrapper loading" ref={imgRef}>
                 <img alt="" {...props} />
             </div>
         </>

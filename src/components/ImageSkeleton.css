@@ -11,15 +11,18 @@
 .loaded {
     width: fit-content;
     height: fit-content;
-    aspect-ratio: unset;
-    animation: none;
+    opacity: 1;
+}
+
+.loading {
+    width: 0px;
+    opacity: 0;
 }
 
 .img-wrapper {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
 }
+
 
 @keyframes loading {
     0% {
