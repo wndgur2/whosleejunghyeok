@@ -25,6 +25,10 @@
     object-fit: cover;
 }
 
+.profile-name {
+    letter-spacing: 0.1em;
+}
+
 .profile-content {
     display: flex;
     flex-direction: column;
