@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family: 'NanumGothic'; */
     font-family: 'Roboto', sans-serif;
     color: var(--content-color);
-    /* border: 1px solid #f00; */
+    scrollbar-width: none;
 }
 
 :root {
@@ -30,7 +31,7 @@
     --dark-accent-color: #64f;
     --dark-dimmed-accent-color: #64f2;
     --dark-accent-content-color: #86fc;
-    --dark-content-color: #eaeaea;
+    --dark-content-color: #eee;
     --dark-action-color: #aff;
     --dark-minor-color: #888;
     --dark-icon-color: #ddd;

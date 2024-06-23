@@ -7,7 +7,6 @@ import useSearchPosts from "../../hooks/useSearchPosts";
 import { FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import ListedProject from "../../components/ListedProject";
 import CATEGORIES from "../../consts/CATEGORIES";
-import Loading from "../../components/Loading";
 
 const Search: FunctionComponent = () => {
     const params = useParams();
